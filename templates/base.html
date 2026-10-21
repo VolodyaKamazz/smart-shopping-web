@@ -1,14 +1,27 @@
-{% load static %}<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}Умный Шопинг{% endblock %}</title>
-  {# Временная заглушка. Frontend заменит этот файл своим base.html с Bootstrap #}
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умный Шопинг</title>
+    <!-- Подключаем Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  {% block content %}{% endblock %}
-  <script src="{% static 'js/main.js' %}"></script>
+    <!-- Шапка сайта -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Умный Шопинг</a>
+            <div class="d-flex text-white">
+                <span>Профиль</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Место, куда будут вставляться другие страницы -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
 </body>
 </html>

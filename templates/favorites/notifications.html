@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="mt-4">Уведомления</h3>
+<ul>{% for n in notifications %}<li>{{ n.message }} <small class="text-muted">{{ n.created_at|date:"d.m.Y H:i" }}</small></li>{% empty %}<li>Уведомлений нет</li>{% endfor %}</ul>
+{% endblock %}

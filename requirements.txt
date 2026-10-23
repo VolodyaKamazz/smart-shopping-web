@@ -1,1 +1,7 @@
 Django>=5.2,<5.3
+django-q2
+dj-database-url
+httpx
+whitenoise
+gunicorn
+psycopg[binary]

@@ -6,7 +6,7 @@ from django.shortcuts import redirect, render
 from favorites.models import Favorite
 from search.models import SearchRequest
 
-from .forms import RegisterForm
+from .forms import ProfileForm, RegisterForm
 
 
 def register(request):
@@ -25,3 +25,13 @@ def cabinet(request):
         "history": SearchRequest.objects.filter(user=request.user).order_by("-created_at")[:20],
         "favorites": Favorite.objects.filter(user=request.user).select_related("product"),
     })
+
+
+@login_required
+def profile(request):
+    form = ProfileForm(request.POST or None, instance=request.user)
+    if request.method == "POST" and form.is_valid():
+        form.save()
+        messages.success(request, "Профиль сохранён")
+        return redirect("accounts:profile")
+    return render(request, "accounts/profile.html", {"form": form})

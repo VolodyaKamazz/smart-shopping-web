@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center mt-4">
+  <div class="col-md-6">
+    <h3>Профиль</h3>
+    <p class="text-muted">Эти параметры учитываются при подборе и сравнении предложений</p>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+      <div class="mb-3">
+        <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% for error in field.errors %}<div class="text-danger small">{{ error }}</div>{% endfor %}
+      </div>
+      {% endfor %}
+      <button class="btn btn-primary" type="submit">Сохранить</button>
+      <a class="btn btn-outline-secondary" href="{% url 'accounts:cabinet' %}">В кабинет</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

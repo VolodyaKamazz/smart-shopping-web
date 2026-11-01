@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2026-10-29 12:00">
+  <shop>
+    <name>2DROIDA</name>
+    <company>2DROIDA</company>
+    <url>https://2droida.ru</url>
+    <currencies>
+      <currency id="RUR" rate="1" />
+    </currencies>
+    <categories>
+      <category id="5000">Электроника</category>
+      <category id="5001" parentId="5000">Смартфоны</category>
+      <category id="5002" parentId="5000">Ноутбуки</category>
+      <category id="5003" parentId="5000">Планшеты</category>
+      <category id="5004" parentId="5000">Наушники</category>
+    </categories>
+    <offers>
+      <offer id="DR1001" available="false" type="vendor.model">
+        <url>https://2droida.ru/catalog/smartfony/</url>
+        <price>68890</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy S24 8/256GB</model>
+        <vendorCode>SM-S921B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.2</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DR1002" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/smartfony/</url>
+        <price>86290</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy S24+ 12/512GB</model>
+        <vendorCode>SM-S926B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.500</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.7</param>
+        <param name="Оперативная память" unit="ГБ">12</param>
+        <param name="Встроенная память" unit="ГБ">512</param>
+      </offer>
+      <offer id="DR1003" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/smartfony/</url>
+        <price>33390</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy A55 5G 8/256GB</model>
+        <vendorCode>SM-A556B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.6</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DR1004" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/smartfony/</url>
+        <price>70490</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Apple</vendor>
+        <model>iPhone 15 128GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.1</param>
+        <param name="Встроенная память" unit="ГБ">128</param>
+      </offer>
+      <offer id="DR1005" available="false" type="vendor.model">
+        <url>https://2droida.ru/catalog/smartfony/</url>
+        <price>100090</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Apple</vendor>
+        <model>iPhone 15 Pro 256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.1</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DR1006" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/smartfony/</url>
+        <price>25590</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Xiaomi</vendor>
+        <model>Redmi Note 13 Pro 8/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.67</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DR1007" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/smartfony/</url>
+        <price>45690</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Xiaomi</vendor>
+        <model>14T 12/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.67</param>
+        <param name="Оперативная память" unit="ГБ">12</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DR1008" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/smartfony/</url>
+        <price>41190</price>
+        <oldprice>44490</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Honor</vendor>
+        <model>200 12/512GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.7</param>
+        <param name="Оперативная память" unit="ГБ">12</param>
+        <param name="Встроенная память" unit="ГБ">512</param>
+      </offer>
+      <offer id="DR1009" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/noutbuki/</url>
+        <price>105890</price>
+        <oldprice>114390</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>5002</categoryId>
+        <typePrefix>Ноутбук</typePrefix>
+        <vendor>Apple</vendor>
+        <model>MacBook Air 13 M2 8/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>2.000</weight>
+        <param name="Диагональ экрана" unit="дюйм">13.6</param>
+        <param name="Процессор">Apple M2</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DR1010" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/noutbuki/</url>
+        <price>130890</price>
+        <oldprice>141390</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>5002</categoryId>
+        <typePrefix>Ноутбук</typePrefix>
+        <vendor>Apple</vendor>
+        <model>MacBook Air 15 M2 8/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>2.500</weight>
+        <param name="Диагональ экрана" unit="дюйм">15.3</param>
+        <param name="Процессор">Apple M2</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DR1011" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/noutbuki/</url>
+        <price>57990</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5002</categoryId>
+        <typePrefix>Ноутбук</typePrefix>
+        <vendor>Lenovo</vendor>
+        <model>IdeaPad Slim 3 15IAH8</model>
+        <vendorCode>15IAH8</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>3.000</weight>
+        <param name="Диагональ экрана" unit="дюйм">15.6</param>
+        <param name="Процессор">Intel Core i5-12450H</param>
+      </offer>
+      <offer id="DR1012" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/planshety/</url>
+        <price>44390</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5003</categoryId>
+        <typePrefix>Планшет</typePrefix>
+        <vendor>Apple</vendor>
+        <model>iPad 10.9 (10-го поколения) Wi-Fi 64GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.900</weight>
+        <param name="Диагональ экрана" unit="дюйм">10.9</param>
+        <param name="Встроенная память" unit="ГБ">64</param>
+      </offer>
+      <offer id="DR1013" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/planshety/</url>
+        <price>20390</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5003</categoryId>
+        <typePrefix>Планшет</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy Tab A9+ Wi-Fi 4/64GB</model>
+        <vendorCode>SM-X210</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.800</weight>
+        <param name="Диагональ экрана" unit="дюйм">11</param>
+        <param name="Оперативная память" unit="ГБ">4</param>
+        <param name="Встроенная память" unit="ГБ">64</param>
+      </offer>
+      <offer id="DR1014" available="false" type="vendor.model">
+        <url>https://2droida.ru/catalog/naushniki-i-garnitury/</url>
+        <price>25890</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5004</categoryId>
+        <typePrefix>Наушники</typePrefix>
+        <vendor>Apple</vendor>
+        <model>AirPods Pro (2-го поколения) USB-C</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.250</weight>
+        <param name="Тип">TWS (вкладыши)</param>
+        <param name="Шумоподавление">Активное</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="DR1015" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/naushniki-i-garnitury/</url>
+        <price>30990</price>
+        <oldprice>33490</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>5004</categoryId>
+        <typePrefix>Наушники</typePrefix>
+        <vendor>Sony</vendor>
+        <model>WH-1000XM5</model>
+        <vendorCode>WH-1000XM5</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.900</weight>
+        <param name="Тип">Полноразмерные</param>
+        <param name="Шумоподавление">Активное</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="DR1016" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/naushniki-i-garnitury/</url>
+        <price>5290</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5004</categoryId>
+        <typePrefix>Наушники</typePrefix>
+        <vendor>JBL</vendor>
+        <model>Tune 520BT</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Тип">Накладные</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="DR1017" available="true" type="vendor.model">
+        <url>https://2droida.ru/catalog/naushniki-i-garnitury/</url>
+        <price>15390</price>
+        <oldprice>16590</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>5004</categoryId>
+        <typePrefix>Наушники</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy Buds2 Pro</model>
+        <vendorCode>SM-R510</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.200</weight>
+        <param name="Тип">TWS (вкладыши)</param>
+        <param name="Шумоподавление">Активное</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="DR-ERR-1" available="true" type="vendor.model">
+        <url>https://2droida.ru</url>
+        <price>abc</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>5001</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Xiaomi</vendor>
+        <model>14T 12/256GB</model>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>

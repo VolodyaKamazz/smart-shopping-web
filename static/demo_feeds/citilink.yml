@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2026-10-29 12:00">
+  <shop>
+    <name>Ситилинк</name>
+    <company>Ситилинк</company>
+    <url>https://www.citilink.ru</url>
+    <currencies>
+      <currency id="RUR" rate="1" />
+    </currencies>
+    <categories>
+      <category id="1">Электроника</category>
+      <category id="11" parentId="1">Смартфоны</category>
+      <category id="12" parentId="1">Ноутбуки</category>
+      <category id="13" parentId="1">Планшеты</category>
+      <category id="14" parentId="1">Наушники</category>
+    </categories>
+    <offers>
+      <offer id="CL1001" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Samsung%20Galaxy%20S24%208/256GB</url>
+        <price>65090</price>
+        <oldprice>70290</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy S24 8/256GB</model>
+        <vendorCode>SM-S921B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.2</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="CL1002" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Samsung%20Galaxy%20S24%2B%2012/512GB</url>
+        <price>83790</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy S24+ 12/512GB</model>
+        <vendorCode>SM-S926B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.500</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.7</param>
+        <param name="Оперативная память" unit="ГБ">12</param>
+        <param name="Встроенная память" unit="ГБ">512</param>
+      </offer>
+      <offer id="CL1003" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Samsung%20Galaxy%20A55%205G%208/256GB</url>
+        <price>33790</price>
+        <oldprice>36490</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy A55 5G 8/256GB</model>
+        <vendorCode>SM-A556B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.6</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="CL1004" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Apple%20iPhone%2015%20128GB</url>
+        <price>68290</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Apple</vendor>
+        <model>iPhone 15 128GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.1</param>
+        <param name="Встроенная память" unit="ГБ">128</param>
+      </offer>
+      <offer id="CL1005" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Apple%20iPhone%2015%20Pro%20256GB</url>
+        <price>95590</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Apple</vendor>
+        <model>iPhone 15 Pro 256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.1</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="CL1006" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Xiaomi%20Redmi%20Note%2013%20Pro%208/256GB</url>
+        <price>24990</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Xiaomi</vendor>
+        <model>Redmi Note 13 Pro 8/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.67</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="CL1007" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Xiaomi%2014T%2012/256GB</url>
+        <price>44090</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>11</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Xiaomi</vendor>
+        <model>14T 12/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.67</param>
+        <param name="Оперативная память" unit="ГБ">12</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="CL1008" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Apple%20MacBook%20Air%2013%20M2%208/256GB</url>
+        <price>99590</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>12</categoryId>
+        <typePrefix>Ноутбук</typePrefix>
+        <vendor>Apple</vendor>
+        <model>MacBook Air 13 M2 8/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>2.000</weight>
+        <param name="Диагональ экрана" unit="дюйм">13.6</param>
+        <param name="Процессор">Apple M2</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="CL1009" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Apple%20MacBook%20Air%2015%20M2%208/256GB</url>
+        <price>126790</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>12</categoryId>
+        <typePrefix>Ноутбук</typePrefix>
+        <vendor>Apple</vendor>
+        <model>MacBook Air 15 M2 8/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>2.500</weight>
+        <param name="Диагональ экрана" unit="дюйм">15.3</param>
+        <param name="Процессор">Apple M2</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="CL1010" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Lenovo%20IdeaPad%20Slim%203%2015IAH8</url>
+        <price>55890</price>
+        <oldprice>60390</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>12</categoryId>
+        <typePrefix>Ноутбук</typePrefix>
+        <vendor>Lenovo</vendor>
+        <model>IdeaPad Slim 3 15IAH8</model>
+        <vendorCode>15IAH8</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>3.000</weight>
+        <param name="Диагональ экрана" unit="дюйм">15.6</param>
+        <param name="Процессор">Intel Core i5-12450H</param>
+      </offer>
+      <offer id="CL1011" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Apple%20iPad%2010.9%20%2810-%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%29%20Wi-Fi%2064GB</url>
+        <price>41690</price>
+        <oldprice>44990</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>13</categoryId>
+        <typePrefix>Планшет</typePrefix>
+        <vendor>Apple</vendor>
+        <model>iPad 10.9 (10-го поколения) Wi-Fi 64GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.900</weight>
+        <param name="Диагональ экрана" unit="дюйм">10.9</param>
+        <param name="Встроенная память" unit="ГБ">64</param>
+      </offer>
+      <offer id="CL1012" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Samsung%20Galaxy%20Tab%20A9%2B%20Wi-Fi%204/64GB</url>
+        <price>20490</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>13</categoryId>
+        <typePrefix>Планшет</typePrefix>
+        <vendor>Samsung</vendor>
+        <model>Galaxy Tab A9+ Wi-Fi 4/64GB</model>
+        <vendorCode>SM-X210</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.800</weight>
+        <param name="Диагональ экрана" unit="дюйм">11</param>
+        <param name="Оперативная память" unit="ГБ">4</param>
+        <param name="Встроенная память" unit="ГБ">64</param>
+      </offer>
+      <offer id="CL1013" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Xiaomi%20Pad%206%208/256GB</url>
+        <price>35790</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>13</categoryId>
+        <typePrefix>Планшет</typePrefix>
+        <vendor>Xiaomi</vendor>
+        <model>Pad 6 8/256GB</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.900</weight>
+        <param name="Диагональ экрана" unit="дюйм">11</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="CL1014" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Apple%20AirPods%20Pro%20%282-%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%29%20USB-C</url>
+        <price>25590</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>14</categoryId>
+        <typePrefix>Наушники</typePrefix>
+        <vendor>Apple</vendor>
+        <model>AirPods Pro (2-го поколения) USB-C</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.250</weight>
+        <param name="Тип">TWS (вкладыши)</param>
+        <param name="Шумоподавление">Активное</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="CL1015" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=Sony%20WH-1000XM5</url>
+        <price>29090</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>14</categoryId>
+        <typePrefix>Наушники</typePrefix>
+        <vendor>Sony</vendor>
+        <model>WH-1000XM5</model>
+        <vendorCode>WH-1000XM5</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.900</weight>
+        <param name="Тип">Полноразмерные</param>
+        <param name="Шумоподавление">Активное</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="CL1016" available="true" type="vendor.model">
+        <url>https://www.citilink.ru/search/?text=JBL%20Tune%20520BT</url>
+        <price>4890</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>14</categoryId>
+        <typePrefix>Наушники</typePrefix>
+        <vendor>JBL</vendor>
+        <model>Tune 520BT</model>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Тип">Накладные</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>

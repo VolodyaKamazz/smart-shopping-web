@@ -1,0 +1,5002 @@
+[
+  {
+    "zone_from": 1,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 1,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 2,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 960
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1541
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 3,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 401
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 896
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1054
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 4,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 854
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 992
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 523
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 5,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1417
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1782
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1773
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1016
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 781
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 6,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3105
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3083
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2412
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2129
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1398
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 7,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3352
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3574
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3696
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2960
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2726
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1967
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 634
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 8,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4202
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4415
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4516
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3809
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3560
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2811
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 1434
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "292.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "585.60",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1171.20",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1756.80",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "2928.00",
+    "min_days": 3,
+    "max_days": 7,
+    "belt": 2,
+    "hub_distance_km": 850
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 9,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 1,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 1,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 1,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 1,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 1,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6140
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 2,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 2,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 2,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 2,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 2,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6195
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 3,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 3,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 3,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 3,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 3,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 6616
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 4,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 4,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 4,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 4,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 4,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5778
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 5,
+    "max_weight_kg": "0.5",
+    "price": "359.90",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 5,
+    "max_weight_kg": "1",
+    "price": "719.80",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 5,
+    "max_weight_kg": "2",
+    "price": "1439.60",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 5,
+    "max_weight_kg": "3",
+    "price": "2159.40",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 5,
+    "max_weight_kg": "5",
+    "price": "3599.00",
+    "min_days": 9,
+    "max_days": 16,
+    "belt": 4,
+    "hub_distance_km": 5630
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 6,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 6,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 6,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 6,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 6,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 4851
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 7,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 7,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 7,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 7,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 7,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 3575
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 8,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 8,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 8,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 8,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 8,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2942
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 9,
+    "max_weight_kg": "0.5",
+    "price": "317.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 9,
+    "max_weight_kg": "1",
+    "price": "634.40",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 9,
+    "max_weight_kg": "2",
+    "price": "1268.80",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 9,
+    "max_weight_kg": "3",
+    "price": "1903.20",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 9,
+    "max_weight_kg": "5",
+    "price": "3172.00",
+    "min_days": 6,
+    "max_days": 12,
+    "belt": 3,
+    "hub_distance_km": 2206
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 10,
+    "max_weight_kg": "0.5",
+    "price": "268.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 10,
+    "max_weight_kg": "1",
+    "price": "536.80",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 10,
+    "max_weight_kg": "2",
+    "price": "1073.60",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 10,
+    "max_weight_kg": "3",
+    "price": "1610.40",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  },
+  {
+    "zone_from": 10,
+    "zone_to": 10,
+    "max_weight_kg": "5",
+    "price": "2684.00",
+    "min_days": 2,
+    "max_days": 5,
+    "belt": 1,
+    "hub_distance_km": 0
+  }
+]

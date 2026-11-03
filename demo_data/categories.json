@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "electronics",
+    "name": "Электроника",
+    "parent": null,
+    "keywords": "электроника, техника, гаджет, гаджеты"
+  },
+  {
+    "slug": "smartphones",
+    "name": "Смартфоны",
+    "parent": "electronics",
+    "keywords": "смартфон, смартфоны, телефон, телефоны, мобильный, мобильник, сотовый"
+  },
+  {
+    "slug": "laptops",
+    "name": "Ноутбуки",
+    "parent": "electronics",
+    "keywords": "ноутбук, ноутбуки, ультрабук, лэптоп, макбук"
+  },
+  {
+    "slug": "tablets",
+    "name": "Планшеты",
+    "parent": "electronics",
+    "keywords": "планшет, планшеты, планшетный компьютер, айпад"
+  },
+  {
+    "slug": "headphones",
+    "name": "Наушники",
+    "parent": "electronics",
+    "keywords": "наушники, наушник, гарнитура, беспроводные наушники, tws, вкладыши"
+  }
+]

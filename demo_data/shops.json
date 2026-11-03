@@ -1,0 +1,155 @@
+[
+  {
+    "name": "Ситилинк",
+    "url": "https://www.citilink.ru",
+    "origin_city": "Москва",
+    "rating": "4.70",
+    "rating_count": 18450,
+    "return_days": 7,
+    "warranty_months": 12,
+    "payment_methods": [
+      "card_online",
+      "card_on_receipt",
+      "cash",
+      "sbp"
+    ],
+    "refresh_hours": 6,
+    "feed_url": "http://127.0.0.1:8000/static/demo_feeds/citilink.yml",
+    "category_map": {
+      "11": "smartphones",
+      "12": "laptops",
+      "13": "tablets",
+      "14": "headphones",
+      "1": "electronics"
+    },
+    "delivery_rules": [
+      {
+        "city": null,
+        "cost": "499.00",
+        "free_from": "7000.00",
+        "min_days": 2,
+        "max_days": 6
+      },
+      {
+        "city": "Москва",
+        "cost": "299.00",
+        "free_from": "5000.00",
+        "min_days": 1,
+        "max_days": 2
+      },
+      {
+        "city": "Санкт-Петербург",
+        "cost": "349.00",
+        "free_from": "5000.00",
+        "min_days": 1,
+        "max_days": 3
+      }
+    ]
+  },
+  {
+    "name": "DNS",
+    "url": "https://www.dns-shop.ru",
+    "origin_city": "Москва",
+    "rating": "4.60",
+    "rating_count": 9210,
+    "return_days": 7,
+    "warranty_months": 12,
+    "payment_methods": [
+      "card_online",
+      "card_on_receipt",
+      "cash"
+    ],
+    "refresh_hours": 6,
+    "feed_url": "http://127.0.0.1:8000/static/demo_feeds/dns.yml",
+    "category_map": {
+      "101": "smartphones",
+      "102": "laptops",
+      "103": "tablets",
+      "104": "headphones",
+      "100": "electronics"
+    },
+    "delivery_rules": [
+      {
+        "city": null,
+        "cost": "399.00",
+        "free_from": "10000.00",
+        "min_days": 3,
+        "max_days": 8
+      },
+      {
+        "city": "Москва",
+        "cost": "199.00",
+        "free_from": "3000.00",
+        "min_days": 1,
+        "max_days": 2
+      },
+      {
+        "city": "Новосибирск",
+        "cost": "349.00",
+        "free_from": "10000.00",
+        "min_days": 2,
+        "max_days": 4
+      }
+    ]
+  },
+  {
+    "name": "2DROIDA",
+    "url": "https://2droida.ru",
+    "origin_city": "Москва",
+    "rating": "4.90",
+    "rating_count": 14,
+    "return_days": 7,
+    "warranty_months": 12,
+    "payment_methods": [
+      "card_online",
+      "cash",
+      "sbp"
+    ],
+    "refresh_hours": 12,
+    "feed_url": "http://127.0.0.1:8000/static/demo_feeds/2droida.yml",
+    "category_map": {
+      "5001": "smartphones",
+      "5002": "laptops",
+      "5003": "tablets",
+      "5004": "headphones",
+      "5000": "electronics"
+    },
+    "delivery_rules": [
+      {
+        "city": null,
+        "cost": "600.00",
+        "free_from": "15000.00",
+        "min_days": 3,
+        "max_days": 9
+      },
+      {
+        "city": "Москва",
+        "cost": "300.00",
+        "free_from": "5000.00",
+        "min_days": 1,
+        "max_days": 2
+      },
+      {
+        "city": "Новосибирск",
+        "cost": "250.00",
+        "free_from": "3000.00",
+        "min_days": 1,
+        "max_days": 2
+      },
+      {
+        "city": "Томск",
+        "cost": "250.00",
+        "free_from": "3000.00",
+        "min_days": 1,
+        "max_days": 2
+      },
+      {
+        "city": "Кемерово",
+        "cost": "250.00",
+        "free_from": "3000.00",
+        "min_days": 1,
+        "max_days": 2
+      }
+    ]
+  }
+]

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2026-10-29 12:00">
+  <shop>
+    <name>DNS</name>
+    <company>DNS</company>
+    <url>https://www.dns-shop.ru</url>
+    <currencies>
+      <currency id="RUR" rate="1" />
+    </currencies>
+    <categories>
+      <category id="100">Электроника</category>
+      <category id="101" parentId="100">Смартфоны</category>
+      <category id="102" parentId="100">Ноутбуки</category>
+      <category id="103" parentId="100">Планшеты</category>
+      <category id="104" parentId="100">Наушники</category>
+    </categories>
+    <offers>
+      <offer id="DN1001" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Samsung%20Galaxy%20S24%208/256GB</url>
+        <price>62890</price>
+        <oldprice>67890</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <name>Смартфон Samsung Galaxy S24 8/256GB (SM-S921B)</name>
+        <vendor>Samsung</vendor>
+        <vendorCode>SM-S921B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.2</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DN1002" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Samsung%20Galaxy%20S24%2B%2012/512GB</url>
+        <price>84290</price>
+        <oldprice>90990</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <name>Смартфон Samsung Galaxy S24+ 12/512GB (SM-S926B)</name>
+        <vendor>Samsung</vendor>
+        <vendorCode>SM-S926B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.500</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.7</param>
+        <param name="Оперативная память" unit="ГБ">12</param>
+        <param name="Встроенная память" unit="ГБ">512</param>
+      </offer>
+      <offer id="DN1003" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Samsung%20Galaxy%20A55%205G%208/256GB</url>
+        <price>31590</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <name>Смартфон Samsung Galaxy A55 5G 8/256GB (SM-A556B)</name>
+        <vendor>Samsung</vendor>
+        <vendorCode>SM-A556B</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.6</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DN1004" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Apple%20iPhone%2015%20128GB</url>
+        <price>69590</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <name>Смартфон Apple iPhone 15 128GB</name>
+        <vendor>Apple</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.1</param>
+        <param name="Встроенная память" unit="ГБ">128</param>
+      </offer>
+      <offer id="DN1005" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Apple%20iPhone%2015%20Pro%20256GB</url>
+        <price>91690</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <name>Смартфон Apple iPhone 15 Pro 256GB</name>
+        <vendor>Apple</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.1</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DN1006" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Xiaomi%20Redmi%20Note%2013%20Pro%208/256GB</url>
+        <price>24690</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <name>Смартфон Xiaomi Redmi Note 13 Pro 8/256GB</name>
+        <vendor>Xiaomi</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.67</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DN1007" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Xiaomi%2014T%2012/256GB</url>
+        <price>43690</price>
+        <oldprice>47190</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <name>Смартфон Xiaomi 14T 12/256GB</name>
+        <vendor>Xiaomi</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.67</param>
+        <param name="Оперативная память" unit="ГБ">12</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DN1008" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Honor%20200%2012/512GB</url>
+        <price>38590</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <name>Смартфон Honor 200 12/512GB</name>
+        <vendor>Honor</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.450</weight>
+        <param name="Диагональ экрана" unit="дюйм">6.7</param>
+        <param name="Оперативная память" unit="ГБ">12</param>
+        <param name="Встроенная память" unit="ГБ">512</param>
+      </offer>
+      <offer id="DN1009" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Apple%20MacBook%20Air%2013%20M2%208/256GB</url>
+        <price>96090</price>
+        <oldprice>103790</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>102</categoryId>
+        <name>Ноутбук Apple MacBook Air 13 M2 8/256GB</name>
+        <vendor>Apple</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <param name="Диагональ экрана" unit="дюйм">13.6</param>
+        <param name="Процессор">Apple M2</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DN1010" available="false">
+        <url>https://www.dns-shop.ru/search/?q=Lenovo%20IdeaPad%20Slim%203%2015IAH8</url>
+        <price>52890</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>102</categoryId>
+        <name>Ноутбук Lenovo IdeaPad Slim 3 15IAH8 (15IAH8)</name>
+        <vendor>Lenovo</vendor>
+        <vendorCode>15IAH8</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <param name="Диагональ экрана" unit="дюйм">15.6</param>
+        <param name="Процессор">Intel Core i5-12450H</param>
+      </offer>
+      <offer id="DN1011" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Apple%20iPad%2010.9%20%2810-%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%29%20Wi-Fi%2064GB</url>
+        <price>41990</price>
+        <oldprice>45290</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>103</categoryId>
+        <name>Планшет Apple iPad 10.9 (10-го поколения) Wi-Fi 64GB</name>
+        <vendor>Apple</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.900</weight>
+        <param name="Диагональ экрана" unit="дюйм">10.9</param>
+        <param name="Встроенная память" unit="ГБ">64</param>
+      </offer>
+      <offer id="DN1012" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Samsung%20Galaxy%20Tab%20A9%2B%20Wi-Fi%204/64GB</url>
+        <price>19090</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>103</categoryId>
+        <name>Планшет Samsung Galaxy Tab A9+ Wi-Fi 4/64GB (SM-X210)</name>
+        <vendor>Samsung</vendor>
+        <vendorCode>SM-X210</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.800</weight>
+        <param name="Диагональ экрана" unit="дюйм">11</param>
+        <param name="Оперативная память" unit="ГБ">4</param>
+        <param name="Встроенная память" unit="ГБ">64</param>
+      </offer>
+      <offer id="DN1013" available="false">
+        <url>https://www.dns-shop.ru/search/?q=Xiaomi%20Pad%206%208/256GB</url>
+        <price>34090</price>
+        <oldprice>36790</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>103</categoryId>
+        <name>Планшет Xiaomi Pad 6 8/256GB</name>
+        <vendor>Xiaomi</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.900</weight>
+        <param name="Диагональ экрана" unit="дюйм">11</param>
+        <param name="Оперативная память" unit="ГБ">8</param>
+        <param name="Встроенная память" unit="ГБ">256</param>
+      </offer>
+      <offer id="DN1014" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Apple%20AirPods%20Pro%20%282-%D0%B3%D0%BE%20%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%29%20USB-C</url>
+        <price>23990</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>104</categoryId>
+        <name>Наушники Apple AirPods Pro (2-го поколения) USB-C</name>
+        <vendor>Apple</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.250</weight>
+        <param name="Тип">TWS (вкладыши)</param>
+        <param name="Шумоподавление">Активное</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="DN1015" available="true">
+        <url>https://www.dns-shop.ru/search/?q=Sony%20WH-1000XM5</url>
+        <price>29390</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>104</categoryId>
+        <name>Наушники Sony WH-1000XM5 (WH-1000XM5)</name>
+        <vendor>Sony</vendor>
+        <vendorCode>WH-1000XM5</vendorCode>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.900</weight>
+        <param name="Тип">Полноразмерные</param>
+        <param name="Шумоподавление">Активное</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="DN1016" available="false">
+        <url>https://www.dns-shop.ru/search/?q=JBL%20Tune%20520BT</url>
+        <price>4690</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>104</categoryId>
+        <name>Наушники JBL Tune 520BT</name>
+        <vendor>JBL</vendor>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <warranty-days>P1Y</warranty-days>
+        <weight>0.400</weight>
+        <param name="Тип">Накладные</param>
+        <param name="Подключение">Bluetooth</param>
+      </offer>
+      <offer id="DN-ERR-1" available="true" type="vendor.model">
+        <url>https://www.dns-shop.ru</url>
+        <currencyId>RUR</currencyId>
+        <categoryId>101</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Xiaomi</vendor>
+        <model>14T 12/256GB</model>
+      </offer>
+      <offer id="DN-ERR-2" available="true" type="vendor.model">
+        <url>https://www.dns-shop.ru</url>
+        <price>44990</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>999999</categoryId>
+        <typePrefix>Смартфон</typePrefix>
+        <vendor>Xiaomi</vendor>
+        <model>14T 12/256GB</model>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>

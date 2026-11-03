@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Apple",
+    "normalized_name": "apple"
+  },
+  {
+    "name": "Samsung",
+    "normalized_name": "samsung"
+  },
+  {
+    "name": "Xiaomi",
+    "normalized_name": "xiaomi"
+  },
+  {
+    "name": "POCO",
+    "normalized_name": "poco"
+  },
+  {
+    "name": "Honor",
+    "normalized_name": "honor"
+  },
+  {
+    "name": "Huawei",
+    "normalized_name": "huawei"
+  },
+  {
+    "name": "OPPO",
+    "normalized_name": "oppo"
+  },
+  {
+    "name": "vivo",
+    "normalized_name": "vivo"
+  },
+  {
+    "name": "Lenovo",
+    "normalized_name": "lenovo"
+  },
+  {
+    "name": "ASUS",
+    "normalized_name": "asus"
+  },
+  {
+    "name": "HP",
+    "normalized_name": "hp"
+  },
+  {
+    "name": "Acer",
+    "normalized_name": "acer"
+  },
+  {
+    "name": "Sony",
+    "normalized_name": "sony"
+  },
+  {
+    "name": "JBL",
+    "normalized_name": "jbl"
+  }
+]

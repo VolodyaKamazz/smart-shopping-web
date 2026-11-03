@@ -19,3 +19,21 @@ class SearchFlowTests(TestCase):
     def test_foreign_search_is_hidden(self):
         s = SearchRequest.objects.create(raw_query="x", session_key="other")
         self.assertEqual(self.client.get(reverse("search:wait", args=[s.id])).status_code, 404)
+
+
+class SearchFormTests(TestCase):
+    def test_form_markup(self):
+        html = self.client.get(reverse("search:home")).content.decode()
+        self.assertIn('method="post"', html)
+        self.assertIn('name="query"', html)
+        self.assertIn("csrfmiddlewaretoken", html)
+        self.assertIn(f'action="{reverse("search:start")}"', html)
+
+    def test_post_without_csrf_token_is_rejected(self):
+        from django.test import Client
+        r = Client(enforce_csrf_checks=True).post(reverse("search:start"), {"query": "ноутбук"})
+        self.assertEqual(r.status_code, 403)
+
+    def test_empty_query_redirects_home(self):
+        r = self.client.post(reverse("search:start"), {"query": "   "})
+        self.assertRedirects(r, reverse("search:home"))

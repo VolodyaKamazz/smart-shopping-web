@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h3 class="mt-4">Личный кабинет</h3>
+<a class="btn btn-outline-primary btn-sm" href="{% url 'accounts:profile' %}">Редактировать профиль</a>
 <h5 class="mt-4">История запросов</h5>
 <ul>{% for s in history %}<li><a href="{% url 'search:results' s.id %}">{{ s.raw_query }}</a> <small class="text-muted">{{ s.created_at|date:"d.m.Y H:i" }}</small></li>{% empty %}<li>Пока пусто</li>{% endfor %}</ul>
 <h5 class="mt-4">Избранное</h5>

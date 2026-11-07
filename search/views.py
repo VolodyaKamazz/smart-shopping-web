@@ -52,14 +52,45 @@ def status(request, search_id):
                          "redirect_url": reverse("search:results", args=[search.id]) if search.status == "done" else None})
 
 
+def _money(value):
+    return f"{value:,.0f}".replace(",", "\u00a0")
+
+
+def _delivery_text(result):
+    if result.delivery_price is None:
+        return "—"
+    price = "бесплатно" if result.delivery_price == 0 else f"{_money(result.delivery_price)} ₽"
+    low, high = result.delivery_min_days, result.delivery_max_days
+    if low is None or high is None:
+        return price
+    days = f"{low} дн." if low == high else f"{low}–{high} дн."
+    return f"{price}, {days}"
+
+
+def _result_item(result):
+    offer = result.offer
+    return {
+        "offer_id": offer.id,
+        "shop": offer.shop.name,
+        "title": offer.title_raw,
+        "price": _money(result.item_price),
+        "delivery": _delivery_text(result),
+        "total": _money(result.total_price),
+        "rating": offer.shop.rating,
+        "is_recommended": result.is_recommended,
+        "is_favorite": False,
+    }
+
+
 def results(request, search_id):
     """Дашборд. GET: sort (price|delivery|rating|total), price_max, delivery_max_days, shop, in_stock."""
     search = _own_search(request, search_id)
+    items = [_result_item(r) for r in search.results.select_related("offer__shop")]
     return render(request, "results.html", {
         "search": search,
         "recommendation": None,  # {offer, explanation, facts}
-        "items": [],             # магазин, товар, цена, доставка, итого, рейтинг, is_recommended, is_favorite
-        "warnings": ["Результаты пока не рассчитываются"] if search.status == "done" else [],
+        "items": items,
+        "warnings": ["Результаты пока не рассчитываются"] if search.status == "done" and not items else [],
     })
 
 

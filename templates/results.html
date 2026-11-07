@@ -1,51 +1,80 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h4 class="mb-3">Результаты поиска: «{{ search.raw_query }}»</h4>
+
+{% for warning in warnings %}
+<div class="alert alert-warning">{{ warning }}</div>
+{% endfor %}
+
 <div class="row">
     <!-- Сайдбар с фильтрами -->
-    <div class="col-md-3">
-        <h4>Фильтры</h4>
-        <div class="form-check mt-3">
-            <input class="form-check-input" type="checkbox" id="fastDelivery">
-            <label class="form-check-label" for="fastDelivery">Доставка завтра</label>
-        </div>
-        <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" id="freeDelivery">
-            <label class="form-check-label" for="freeDelivery">Бесплатная доставка</label>
-        </div>
+    <div class="col-md-3 mb-4">
+        <h5>Фильтры</h5>
+        <form method="get">
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" id="fastDelivery"
+                       name="delivery_max_days" value="1"
+                       {% if request.GET.delivery_max_days == '1' %}checked{% endif %}>
+                <label class="form-check-label" for="fastDelivery">Доставка завтра</label>
+            </div>
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" id="freeDelivery" disabled>
+                <label class="form-check-label text-muted" for="freeDelivery">Бесплатная доставка (скоро)</label>
+            </div>
+            <div class="mt-3">
+                <label class="form-label" for="priceMax">Цена до, ₽</label>
+                <input class="form-control" type="number" min="0" id="priceMax" name="price_max"
+                       value="{{ request.GET.price_max }}">
+            </div>
+            <div class="mt-3">
+                <label class="form-label" for="sort">Сортировка</label>
+                <select class="form-select" id="sort" name="sort">
+                    <option value="total" {% if request.GET.sort == 'total' %}selected{% endif %}>По итоговой цене</option>
+                    <option value="price" {% if request.GET.sort == 'price' %}selected{% endif %}>По цене товара</option>
+                    <option value="delivery" {% if request.GET.sort == 'delivery' %}selected{% endif %}>По скорости доставки</option>
+                    <option value="rating" {% if request.GET.sort == 'rating' %}selected{% endif %}>По рейтингу</option>
+                </select>
+            </div>
+            <button class="btn btn-primary w-100 mt-3" type="submit">Применить</button>
+        </form>
     </div>
 
     <!-- Таблица результатов -->
     <div class="col-md-9">
-        <h4>Результаты поиска</h4>
-        <table class="table table-hover mt-3">
-            <thead class="table-light">
-                <tr>
-                    <th>Магазин</th>
-                    <th>Товар</th>
-                    <th>Цена</th>
-                    <th>Доставка</th>
-                    <th>Действие</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Тестовые данные (заглушки) -->
-                <tr>
-                    <td>ДНС</td>
-                    <td>iPhone 15 Pro</td>
-                    <td>115 000 ₽</td>
-                    <td>Завтра (Бесплатно)</td>
-                    <td><button class="btn btn-sm btn-outline-success">В магазин</button></td>
-                </tr>
-                <tr>
-                    <td>Ситилинк</td>
-                    <td>iPhone 15 Pro</td>
-                    <td>112 000 ₽</td>
-                    <td>3 дня (500 ₽)</td>
-                    <td><button class="btn btn-sm btn-outline-success">В магазин</button></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Магазин</th>
+                        <th>Товар</th>
+                        <th>Цена</th>
+                        <th>Доставка</th>
+                        <th>Итого</th>
+                        <th>Действие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr {% if item.is_recommended %}class="table-success"{% endif %}>
+                        <td>{{ item.shop }}</td>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.price }} ₽</td>
+                        <td>{{ item.delivery }}</td>
+                        <td><strong>{{ item.total }} ₽</strong></td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-success" target="_blank"
+                               href="{% url 'search:go' item.offer_id %}">В магазин</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-4">Пока ничего не найдено</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 {% endblock %}

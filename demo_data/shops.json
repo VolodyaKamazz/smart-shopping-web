@@ -14,7 +14,7 @@
       "sbp"
     ],
     "refresh_hours": 6,
-    "feed_url": "http://127.0.0.1:8000/static/demo_feeds/citilink.yml",
+    "feed_file": "citilink.yml",
     "category_map": {
       "11": "smartphones",
       "12": "laptops",
@@ -60,7 +60,7 @@
       "cash"
     ],
     "refresh_hours": 6,
-    "feed_url": "http://127.0.0.1:8000/static/demo_feeds/dns.yml",
+    "feed_file": "dns.yml",
     "category_map": {
       "101": "smartphones",
       "102": "laptops",
@@ -106,7 +106,7 @@
       "sbp"
     ],
     "refresh_hours": 12,
-    "feed_url": "http://127.0.0.1:8000/static/demo_feeds/2droida.yml",
+    "feed_file": "2droida.yml",
     "category_map": {
       "5001": "smartphones",
       "5002": "laptops",

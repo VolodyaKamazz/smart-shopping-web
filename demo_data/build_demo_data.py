@@ -22,11 +22,14 @@ import csv
 import json
 import math
 import random
+import sys
 import xml.etree.ElementTree as ET
 from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from catalog.normalize import normalize_brand
 DATA = ROOT / "demo_data"
 FEEDS = ROOT / "static" / "demo_feeds"
 
@@ -168,10 +171,6 @@ BRANDS = ["Apple", "Samsung", "Xiaomi", "POCO", "Honor", "Huawei", "OPPO", "vivo
           "Lenovo", "ASUS", "HP", "Acer", "Sony", "JBL"]
 
 
-def norm_brand(name):
-    return " ".join("".join(ch if ch.isalnum() else " " for ch in name.lower()).split())
-
-
 # --- Товары фидов -------------------------------------------------------------------
 # cat: slug; type: typePrefix; vendor; model; code: vendorCode (только если известен
 # производителем); params: (название, значение, единица); base: ТЕСТОВАЯ базовая цена, ₽;
@@ -293,7 +292,6 @@ SHOPS = [
 ]
 
 CATEGORY_NAMES = {c["slug"]: c["name"] for c in CATEGORIES}
-FEED_URL_TEMPLATE = "http://127.0.0.1:8000/static/demo_feeds/{}"
 
 
 def round_price(x):
@@ -431,7 +429,7 @@ def main():
     dump("zones.json", zones)
     dump("zone_rates.json", rates)
     dump("categories.json", CATEGORIES)
-    dump("brands.json", [{"name": b, "normalized_name": norm_brand(b)} for b in BRANDS])
+    dump("brands.json", [{"name": b, "normalized_name": normalize_brand(b)} for b in BRANDS])
 
     offers = build_offers()
     shops_json = []
@@ -445,7 +443,7 @@ def main():
             "rating": shop["rating"], "rating_count": shop["rating_count"],
             "return_days": shop["return_days"], "warranty_months": shop["warranty_months"],
             "payment_methods": shop["payment_methods"], "refresh_hours": shop["refresh_hours"],
-            "feed_url": FEED_URL_TEMPLATE.format(shop["feed_file"]),
+            "feed_file": shop["feed_file"],
             "category_map": slug_by_id,
             "delivery_rules": shop["delivery_rules"],
         })

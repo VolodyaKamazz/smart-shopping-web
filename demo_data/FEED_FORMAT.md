@@ -2,7 +2,7 @@
 
 Фиды лежат в `static/demo\_feeds/` (`citilink.yml`, `dns.yml`, `2droida.yml`). Формат — YML
 (Яндекс.Маркет), кодировка UTF-8. В колонке «Куда пойдёт» указано, куда поле попадёт при
-импорте (неделя 2) по моделям из `catalog/models.py`.
+импорте по моделям из `catalog/models.py`.
 
 ## Общий каркас
 
@@ -48,7 +48,7 @@
 
 |Тег|Пример|Обязателен|Куда пойдёт|
 |-|-|-|-|
-|`url`|`https://2droida.ru/catalog/smartfony/`|да|`Offer.url` (в демо — страница поиска или раздела, не карточка)|
+|`url`|`https://2droida.ru/catalog/smartfony/`|да|`Offer.url` (до 2048 символов, только http/https; в демо — страница поиска или раздела, не карточка)|
 |`price`|`64990`|да, число > 0|`Offer.price`|
 |`oldprice`|`69990`|нет|`Offer.old\_price`|
 |`currencyId`|`RUR`|да|проверка валюты|
@@ -61,14 +61,16 @@
 |`manufacturer\_warranty`|`true`|нет|признак гарантии производителя|
 |`warranty-days`|`P1Y` (период ISO 8601)|нет|`Offer.warranty\_months` (`P1Y` → 12)|
 |`weight`|`0.450`|нет (у DNS нет для ноутбуков)|`Offer.weight\_g` (кг → граммы, 450); если нет — запасной вес по категории|
-|`param name=".." \[unit=".."]`|`<param name="Диагональ экрана" unit="дюйм">6.2</param>`|нет|`Offer.params` и `Product.attributes`|
+|`param name=".." \[unit=".."]`|`<param name="Диагональ экрана" unit="дюйм">6.2</param>`|нет|`Offer.params` и `Product.attributes`, формат JSON: `{"Диагональ экрана": {"value": "6.2", "unit": "дюйм"}}`|
+|`barcode`|`4006381333931`|нет (в демо нет)|GTIN для сопоставления товаров. Несколько штрихкодов: несколькими тегами или через запятую в одном теге|
 
 Названия для `vendor.model` собираются как `typePrefix vendor model`, например
 `Смартфон Samsung Galaxy S24 8/256GB`.
 
 Параметры в фидах: «Диагональ экрана» (дюйм), «Оперативная память» (ГБ), «Встроенная
 память» (ГБ), «Процессор», «Тип», «Шумоподавление», «Подключение» — набор зависит от
-категории. Тегов `barcode` (GTIN), `picture` и `description` в демо-фидах нет.
+категории. Тегов `barcode` (GTIN), `picture` и `description` в демо-фидах нет, но импорт `barcode` понимает.
+Как импорт проверяет и преобразует теги — в [docs/importer.md](../docs/importer.md).
 
 ## Пример: Ситилинк / 2DROIDA (`vendor.model`)
 

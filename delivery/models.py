@@ -13,7 +13,8 @@ class City(models.Model):
 
 class ShopDeliveryRule(models.Model):
     shop = models.ForeignKey("catalog.Shop", on_delete=models.CASCADE, related_name="delivery_rules")
-    city = models.ForeignKey(City, null=True, blank=True, on_delete=models.CASCADE, help_text="Пусто — правило по умолчанию")
+    city = models.ForeignKey(City, null=True, blank=True, on_delete=models.CASCADE,
+                             help_text="Пусто — правило по умолчанию")
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     free_from = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     min_days = models.PositiveSmallIntegerField()

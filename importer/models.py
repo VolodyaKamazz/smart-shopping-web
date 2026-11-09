@@ -1,11 +1,17 @@
 from django.db import models
 
+STAT_LABELS = {"created": "создано", "updated": "обновлено", "unchanged": "без изменений", "errors": "ошибок"}
+
 
 class ImportRun(models.Model):
     shop = models.ForeignKey("catalog.Shop", on_delete=models.CASCADE, related_name="import_runs")
     started_at = models.DateTimeField(auto_now_add=True)
     finished_at = models.DateTimeField(null=True, blank=True)
-    status = models.CharField(max_length=10, default="running",
-                              choices=[("running", "Выполняется"), ("success", "Успешно"), ("partial", "Частично"), ("failed", "Ошибка")])
+    status = models.CharField(
+        max_length=10, default="running",
+        choices=[("running", "Выполняется"), ("success", "Успешно"), ("partial", "Частично"), ("failed", "Ошибка")])
     stats = models.JSONField(default=dict, blank=True)
     error = models.TextField(blank=True)
+
+    def summary(self) -> str:
+        return ", ".join(f"{label} {self.stats[key]}" for key, label in STAT_LABELS.items() if key in self.stats)

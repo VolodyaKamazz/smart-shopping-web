@@ -5,8 +5,6 @@ from . import models
 
 @admin.register(models.ImportRun)
 class ImportRunAdmin(admin.ModelAdmin):
-    """Запуски импорта создаёт код; в админке они только для просмотра."""
-
     list_display = ("shop", "status", "started_at", "finished_at", "stats_summary")
     list_filter = ("status", "shop")
     search_fields = ("shop__name", "error")
@@ -20,7 +18,4 @@ class ImportRunAdmin(admin.ModelAdmin):
 
     @admin.display(description="Итоги")
     def stats_summary(self, obj):
-        s = obj.stats or {}
-        if not s:
-            return "—"
-        return ", ".join(f"{k}: {v}" for k, v in s.items())
+        return obj.summary() or "—"

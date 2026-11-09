@@ -5,36 +5,31 @@ from decimal import Decimal, InvalidOperation
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from catalog.models import Brand, Category, Shop
+from catalog.normalize import normalize_brand
 from delivery.models import City
+from importer.yml_parser import iter_offers
 
-FEEDS_DIR = settings.BASE_DIR / "static" / "demo_feeds"
+FEEDS_DIR = settings.DEMO_FEEDS_DIR
 FEED_FILES = ["citilink.yml", "dns.yml", "2droida.yml"]
 
 
-def parse_feed(path):
-    """Потоковый разбор (iterparse), как это будет делать импорт: (категории, офферы)."""
-    categories, offers = {}, []
-    for _, el in ET.iterparse(path, events=("end",)):
-        if el.tag == "category":
-            categories[el.get("id")] = {"name": el.text, "parent": el.get("parentId")}
-        elif el.tag == "offer":
-            offers.append({
-                "id": el.get("id"), "available": el.get("available"),
-                "price": el.findtext("price"), "category": el.findtext("categoryId"),
-                "vendor": el.findtext("vendor"), "model": el.findtext("model"),
-                "name": el.findtext("name"), "weight": el.findtext("weight"),
-            })
-            el.clear()
-    return categories, offers
+def feed_offers(fname):
+    """Предложения фида тем же парсером, что использует импорт."""
+    with open(FEEDS_DIR / fname, "rb") as feed:
+        return list(iter_offers(feed))
+
+
+def feed_category_ids(fname):
+    return {el.get("id") for _, el in ET.iterparse(FEEDS_DIR / fname, events=("end",)) if el.tag == "category"}
 
 
 def is_valid_price(text):
     try:
-        return text is not None and Decimal(text) > 0
+        return bool(text) and Decimal(text) > 0
     except InvalidOperation:
         return False
 
@@ -73,53 +68,59 @@ class DemoDataLoadTests(TestCase):
         slugs = set(Category.objects.values_list("slug", flat=True))
         for shop in Shop.objects.all():
             fname = shop.feed_url.rsplit("/", 1)[-1]
-            categories, _ = parse_feed(FEEDS_DIR / fname)
-            self.assertEqual(set(shop.category_map), set(categories), shop.name)
+            self.assertEqual(set(shop.category_map), feed_category_ids(fname), shop.name)
             self.assertTrue(set(shop.category_map.values()) <= slugs, shop.name)
 
     def test_feed_vendors_are_known_brands(self):
-        from demo_data.build_demo_data import norm_brand
         known = set(Brand.objects.values_list("normalized_name", flat=True))
         for fname in FEED_FILES:
-            _, offers = parse_feed(FEEDS_DIR / fname)
-            for o in offers:
-                self.assertIn(norm_brand(o["vendor"]), known, (fname, o["id"]))
+            for o in feed_offers(fname):
+                self.assertIn(normalize_brand(o.vendor), known, (fname, o.id))
+
+    def test_brand_normalized_name_is_produced_by_runtime_function(self):
+        for brand in Brand.objects.all():
+            self.assertEqual(brand.normalized_name, normalize_brand(brand.name), brand.name)
+
+    def test_feed_url_is_built_from_setting(self):
+        self.assertEqual(Shop.objects.get(name="DNS").feed_url, "http://127.0.0.1:8000/static/demo_feeds/dns.yml")
+        with override_settings(DEMO_FEEDS_BASE_URL="http://localhost:9000/feeds/"):
+            call_command("load_demo_data", verbosity=0)
+        self.assertEqual(Shop.objects.get(name="DNS").feed_url, "http://localhost:9000/feeds/dns.yml")
 
 
 class DemoFeedsTests(TestCase):
     def test_feeds_are_wellformed_and_unique_ids(self):
         for fname in FEED_FILES:
-            categories, offers = parse_feed(FEEDS_DIR / fname)
-            self.assertEqual(len(categories), 5, fname)
-            ids = [o["id"] for o in offers]
+            offers = feed_offers(fname)
+            self.assertEqual(len(feed_category_ids(fname)), 5, fname)
+            ids = [o.id for o in offers]
             self.assertEqual(len(ids), len(set(ids)), fname)
             self.assertGreaterEqual(len(offers), 16, fname)
 
     def test_valid_offers_reference_existing_categories(self):
         for fname in FEED_FILES:
-            categories, offers = parse_feed(FEEDS_DIR / fname)
-            for o in offers:
-                if "-ERR-" in o["id"]:
+            categories = feed_category_ids(fname)
+            for o in feed_offers(fname):
+                if "-ERR-" in o.id:
                     continue
-                self.assertTrue(is_valid_price(o["price"]), (fname, o["id"]))
-                self.assertIn(o["category"], categories, (fname, o["id"]))
+                self.assertTrue(is_valid_price(o.price), (fname, o.id))
+                self.assertIn(o.category_id, categories, (fname, o.id))
 
     def test_intentional_errors_present(self):
         bad = Counter()
         for fname in FEED_FILES:
-            categories, offers = parse_feed(FEEDS_DIR / fname)
-            for o in offers:
-                if not is_valid_price(o["price"]) or o["category"] not in categories:
+            categories = feed_category_ids(fname)
+            for o in feed_offers(fname):
+                if not is_valid_price(o.price) or o.category_id not in categories:
                     bad[fname] += 1
-                    self.assertIn("-ERR-", o["id"])
+                    self.assertIn("-ERR-", o.id)
         self.assertEqual(bad, Counter({"dns.yml": 2, "2droida.yml": 1}))
 
     def test_both_yml_styles_and_missing_weight_case(self):
-        _, cl = parse_feed(FEEDS_DIR / "citilink.yml")
-        _, dns = parse_feed(FEEDS_DIR / "dns.yml")
-        self.assertTrue(all(o["model"] and not o["name"] for o in cl))          # vendor.model
-        self.assertTrue(all(o["name"] for o in dns if "-ERR-" not in o["id"]))  # простой <name>
-        self.assertTrue(any(o["weight"] is None for o in dns))                  # нет веса -> запасной вариант
+        cl, dns = feed_offers("citilink.yml"), feed_offers("dns.yml")
+        self.assertTrue(all(o.model and not o.name for o in cl))          # vendor.model
+        self.assertTrue(all(o.name for o in dns if "-ERR-" not in o.id))  # простой <name>
+        self.assertTrue(any(not o.weight for o in dns))                   # нет веса -> запасной вариант
 
     def test_some_products_in_three_shops_and_some_not(self):
         from demo_data.build_demo_data import PRODUCTS

@@ -1,6 +1,8 @@
 from decimal import Decimal
 
+from django.core.cache import cache
 from django.core.management import call_command
+from django.db import connection
 from django.test import TestCase
 
 from delivery.models import City, ShopDeliveryRule, ZoneRate
@@ -28,9 +30,9 @@ class ZoneRateTests(TestCase):
         self.assertEqual(price(1, 1, "0.5"), Decimal("268.40"))   # пояс 1
         self.assertEqual(price(1, 1, "1"), Decimal("536.80"))
         self.assertEqual(price(1, 1, "5"), Decimal("2684.00"))
-        self.assertEqual(price(1, 2, "0.5"), Decimal("292.80"))   # Москва — Санкт-Петербург, пояс 2
-        self.assertEqual(price(1, 7, "0.5"), Decimal("317.20"))   # Москва — Новосибирск, пояс 3
-        self.assertEqual(price(1, 10, "0.5"), Decimal("359.90"))  # Москва — Хабаровск, пояс 4
+        self.assertEqual(price(1, 2, "0.5"), Decimal("292.80"))
+        self.assertEqual(price(1, 7, "0.5"), Decimal("317.20"))
+        self.assertEqual(price(1, 10, "0.5"), Decimal("359.90"))
 
     def test_matrix_is_symmetric_and_monotonic(self):
         for r in ZoneRate.objects.all():
@@ -54,3 +56,12 @@ class ZoneRateTests(TestCase):
         self.assertEqual(ShopDeliveryRule.objects.count(), 11)
         for r in ShopDeliveryRule.objects.all():
             self.assertLessEqual(r.min_days, r.max_days)
+
+
+class CacheTableTests(TestCase):
+    def test_migrate_creates_cache_table(self):
+        with connection.cursor() as cursor:
+            cursor.execute("DROP TABLE cache_table")
+        call_command("migrate", verbosity=0)
+        cache.set("ключ", "значение")
+        self.assertEqual(cache.get("ключ"), "значение")

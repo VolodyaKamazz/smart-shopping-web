@@ -58,7 +58,7 @@ class Offer(models.Model):
     product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL, related_name="offers")
     shop = models.ForeignKey(Shop, on_delete=models.CASCADE, related_name="offers")
     external_id = models.CharField(max_length=100)
-    url = models.URLField(max_length=1000)
+    url = models.URLField(max_length=2048)
     title_raw = models.CharField(max_length=500)
     price = models.DecimalField(max_digits=12, decimal_places=2)
     old_price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)

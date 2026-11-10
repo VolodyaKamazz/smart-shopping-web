@@ -4,7 +4,8 @@
 
 Команда идемпотентна: повторный запуск обновляет записи, дубликатов не создаёт.
 Товары и предложения не создаются: они появятся при импорте YML-фидов
-(static/demo_feeds/*.yml), см. demo_data/README.md.
+(static/demo_feeds/*.yml).
+Адрес фидов в Shop.feed_url строится из settings.DEMO_FEEDS_BASE_URL.
 """
 import json
 from decimal import Decimal
@@ -96,7 +97,8 @@ class Command(BaseCommand):
                 "url": s["url"], "origin_city": origin, "rating": Decimal(s["rating"]),
                 "rating_count": s["rating_count"], "return_days": s["return_days"],
                 "payment_methods": s["payment_methods"], "warranty_months": s["warranty_months"],
-                "feed_url": s["feed_url"], "refresh_hours": s["refresh_hours"],
+                "feed_url": f"{settings.DEMO_FEEDS_BASE_URL.rstrip('/')}/{s['feed_file']}",
+                "refresh_hours": s["refresh_hours"],
                 "category_map": s["category_map"],
             })
             shop_flags.append(created)

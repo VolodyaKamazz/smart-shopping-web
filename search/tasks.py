@@ -32,6 +32,12 @@ def _set_step(search, step):
     search.save(update_fields=["step"])
 
 
+def within_budget(offers, parsed):
+    low, high = parsed.get("price_min"), parsed.get("price_max")
+    return [offer for offer in offers
+            if (low is None or offer.price >= low) and (high is None or offer.price <= high)]
+
+
 def save_results(search, offers):
     search.results.all().delete()
     ordered = sorted(offers, key=lambda offer: offer.price)[:MAX_RESULTS]
@@ -55,12 +61,12 @@ def run_search(search_id):
         search.save(update_fields=["parsed"])
 
         _set_step(search, "Подбор товаров")
-        products = _call(catalog_services.search_products, search.parsed)
+        products = catalog_services.search_products(search.parsed)
         product_ids = [getattr(product, "pk", product) for product in products]
 
         _set_step(search, "Поиск предложений")
-        offers = _call(catalog_services.get_offers, product_ids) if product_ids else []
-        save_results(search, offers)
+        offers = catalog_services.get_offers(product_ids) if product_ids else []
+        save_results(search, within_budget(offers, search.parsed))
 
         search.status = "done"
     except Exception:

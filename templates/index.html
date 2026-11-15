@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row justify-content-center mt-5">
-    <div class="col-md-8 text-center">
-        <h2>Что вы хотите купить?</h2>
-        <p class="text-muted">Опишите товар, и мы найдем лучшие предложения с учетом доставки</p>
+<section class="home text-center">
+    <h1>Найди лучшее предложение</h1>
+    <p class="mb-4">Сравним цены и доставку в разных магазинах</p>
 
-        <form class="input-group input-group-lg mt-4" method="post" action="{% url 'search:start' %}">
-            {% csrf_token %}
-            <input type="text" name="query" class="form-control" maxlength="300" required autofocus placeholder="Например: Смартфон до 50 000 рублей...">
-            <button class="btn btn-primary" type="submit">Найти</button>
-        </form>
+    <form class="search-pill mx-auto" method="post" action="{% url 'search:start' %}">
+        {% csrf_token %}
+        <span class="search-icon">🔍</span>
+        <input type="text" id="query" name="query" maxlength="300" required autofocus placeholder="Например, наушники до 5000 ₽">
+        <button class="btn-find" type="submit">Найти</button>
+    </form>
+
+    <div class="mt-4 small">Популярные запросы:</div>
+    <div class="mt-2">
+        <button type="button" class="chip" data-query="Смартфон до 30 000 ₽">Смартфон до 30 000 ₽</button>
+        <button type="button" class="chip" data-query="Наушники с шумоподавлением">Наушники с шумоподавлением</button>
+        <button type="button" class="chip" data-query="Робот-пылесос">Робот-пылесос</button>
     </div>
-</div>
+</section>
+
+<script>
+  document.querySelectorAll('.chip').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var i = document.getElementById('query'); i.value = c.dataset.query; i.focus();
+    });
+  });
+</script>
 {% endblock %}

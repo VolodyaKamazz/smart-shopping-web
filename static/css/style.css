@@ -1,1 +1,5 @@
 /* Локальные стили проекта. Bootstrap подключается во frontend-шаблонах. */
+.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+.sortable:hover { color: var(--bs-primary); }
+.sortable.active { color: var(--bs-primary); }
+.sortable.active::after { content: " ▾"; }

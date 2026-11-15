@@ -10,6 +10,8 @@ from django.views.decorators.http import require_POST
 from catalog.models import Offer
 from delivery.models import City
 
+from . import ranking
+from .listing import current_sort, select_results
 from .models import OfferClick, SearchRequest
 
 
@@ -82,16 +84,83 @@ def _result_item(result):
     }
 
 
+def _current_criterion(search):
+    value = search.facts.get("criterion") if isinstance(search.facts, dict) else None
+    return value if value in ranking.PRIORITIES else "balanced"
+
+
+def _sync_criterion(request, search):
+    chosen = request.GET.get("criterion")
+    if search.status == "done" and chosen in ranking.PRIORITIES and chosen != search.facts.get("criterion"):
+        ranking.recalculate(search, chosen)
+
+
+def _recommendation(search):
+    offer = search.recommended_offer
+    if offer is None:
+        return None
+    return {"offer_id": offer.id, "shop": offer.shop.name, "title": offer.title_raw,
+            "explanation": search.explanation, "facts": search.facts}
+
+
+def _warnings(search, items):
+    facts = search.facts if isinstance(search.facts, dict) else {}
+    if search.status == "done" and not items and not search.results.exists() and facts.get("excluded_over_budget"):
+        return [f"Все найденные предложения дороже вашего бюджета ({_money(facts['budget_max'])} ₽)"]
+    return []
+
+
+def _float(value):
+    return None if value is None else float(value)
+
+
+def _api_item(result):
+    offer = result.offer
+    return {
+        "offer_id": offer.id,
+        "shop": offer.shop.name,
+        "title": offer.title_raw,
+        "price": _float(result.item_price),
+        "delivery_price": _float(result.delivery_price),
+        "delivery_min_days": result.delivery_min_days,
+        "delivery_max_days": result.delivery_max_days,
+        "total_price": _float(result.total_price),
+        "rating": _float(offer.shop.rating),
+        "rank": result.rank,
+        "score": result.score,
+        "is_recommended": result.is_recommended,
+        "url": reverse("search:go", args=[offer.id]),
+    }
+
+
 def results(request, search_id):
-    """Дашборд. GET: sort (price|delivery|rating|total), price_max, delivery_max_days, shop, in_stock."""
+    """Дашборд. GET: criterion (balanced|price|speed), sort (price|delivery|rating|total), price_max, delivery_max_days."""
     search = _own_search(request, search_id)
-    items = [_result_item(r) for r in search.results.select_related("offer__shop")]
+    _sync_criterion(request, search)
+    items = [_result_item(r) for r in select_results(search, request.GET)]
     return render(request, "results.html", {
         "search": search,
-        "recommendation": None,  # {offer, explanation, facts}
+        "recommendation": _recommendation(search),
         "items": items,
-        "warnings": ["Результаты пока не рассчитываются"] if search.status == "done" and not items else [],
+        "criterion": _current_criterion(search),
+        "criteria": ranking.CRITERIA,
+        "sort": current_sort(request.GET),
+        "warnings": _warnings(search, items),
     })
+
+
+def results_api(request, search_id):
+    search = _own_search(request, search_id)
+    _sync_criterion(request, search)
+    selected = select_results(search, request.GET)
+    return JsonResponse({
+        "status": search.status,
+        "criterion": _current_criterion(search),
+        "sort": current_sort(request.GET) or "recommendation",
+        "recommendation": _recommendation(search),
+        "count": len(selected),
+        "items": [_api_item(r) for r in selected],
+    }, json_dumps_params={"ensure_ascii": False})
 
 
 @require_POST

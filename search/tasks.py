@@ -6,12 +6,11 @@ from django.utils import timezone
 from catalog import services as catalog_services
 from catalog.models import Brand, Category
 
-from .models import SearchRequest, SearchResult
+from . import ranking
+from .models import SearchRequest
 from .parser import parse_query
 
 logger = logging.getLogger(__name__)
-
-MAX_RESULTS = 50
 
 
 def load_dictionaries():
@@ -38,17 +37,6 @@ def within_budget(offers, parsed):
             if (low is None or offer.price >= low) and (high is None or offer.price <= high)]
 
 
-def save_results(search, offers):
-    search.results.all().delete()
-    ordered = sorted(offers, key=lambda offer: offer.price)[:MAX_RESULTS]
-    SearchResult.objects.bulk_create([
-        SearchResult(search=search, offer=offer, rank=position, score=0.0, breakdown={},
-                     item_price=offer.price, total_price=offer.price)
-        for position, offer in enumerate(ordered, start=1)
-    ])
-    return len(ordered)
-
-
 def run_search(search_id):
     started = time.monotonic()
     search = SearchRequest.objects.get(pk=search_id)
@@ -66,7 +54,9 @@ def run_search(search_id):
 
         _set_step(search, "Поиск предложений")
         offers = catalog_services.get_offers(product_ids) if product_ids else []
-        save_results(search, within_budget(offers, search.parsed))
+
+        _set_step(search, "Расчёт доставки и оценка")
+        ranking.rank_and_save(search, within_budget(offers, search.parsed))
 
         search.status = "done"
     except Exception:

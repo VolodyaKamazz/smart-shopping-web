@@ -8,6 +8,7 @@ from django.urls import reverse
 from django.views.decorators.http import require_POST
 
 from catalog.models import Offer
+from delivery.info import SOURCE_ZONE, format_days
 from delivery.models import City
 
 from .models import OfferClick, SearchRequest
@@ -56,15 +57,19 @@ def _money(value):
     return f"{value:,.0f}".replace(",", "\u00a0")
 
 
+METHOD_LABELS = {"courier": "курьер", "pickup": "ПВЗ"}
+
+
 def _delivery_text(result):
     if result.delivery_price is None:
         return "—"
     price = "бесплатно" if result.delivery_price == 0 else f"{_money(result.delivery_price)} ₽"
     low, high = result.delivery_min_days, result.delivery_max_days
-    if low is None or high is None:
-        return price
-    days = f"{low} дн." if low == high else f"{low}–{high} дн."
-    return f"{price}, {days}"
+    text = price if low is None or high is None else f"{price}, {format_days(low, high)} дн."
+    if result.delivery_source == SOURCE_ZONE:
+        text = f"≈ {text}"
+    method = METHOD_LABELS.get(result.delivery_method)
+    return f"{method}: {text}" if method else text
 
 
 def _result_item(result):

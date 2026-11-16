@@ -15,8 +15,8 @@ class CityAdmin(admin.ModelAdmin):
 
 @admin.register(models.ShopDeliveryRule)
 class ShopDeliveryRuleAdmin(admin.ModelAdmin):
-    list_display = ("shop", "city_or_default", "cost", "free_from", "min_days", "max_days")
-    list_filter = ("shop",)
+    list_display = ("shop", "city_or_default", "method", "cost", "free_from", "min_days", "max_days", "is_active")
+    list_filter = ("shop", "method", "is_active")
     search_fields = ("shop__name", "city__name")
     list_select_related = ("shop", "city")
     autocomplete_fields = ("city",)

@@ -100,7 +100,8 @@ DATABASES = {"default": dj_database_url.config(default=f"sqlite:///{BASE_DIR / '
 if DATABASES["default"]["ENGINE"] == "django.db.backends.sqlite3":
     DATABASES["default"].setdefault("OPTIONS", {}).update({"transaction_mode": "IMMEDIATE", "timeout": 30})
 
-CACHES = {"default": {"BACKEND": "django.core.cache.backends.db.DatabaseCache", "LOCATION": "cache_table"}}
+CACHES = {"default": {"BACKEND": "django.core.cache.backends.db.DatabaseCache", "LOCATION": "cache_table",
+                      "OPTIONS": {"MAX_ENTRIES": 2000}}}
 
 # Фоновые задачи: очередь и расписание в БД.
 # Sync-режим: задачи выполняются сразу в запросе, расписание не срабатывает. По умолчанию он

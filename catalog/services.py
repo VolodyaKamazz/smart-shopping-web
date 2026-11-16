@@ -67,4 +67,4 @@ def search_products(parsed: dict) -> list:
 
 def get_offers(product_ids: list) -> list:
     offers = Offer.objects.filter(product_id__in=product_ids, **AVAILABLE_OFFER)
-    return list(offers.select_related("shop", "product").order_by("price", "pk"))
+    return list(offers.select_related("shop__origin_city", "product__category__parent").order_by("price", "pk"))

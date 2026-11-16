@@ -83,7 +83,7 @@ class SearchResultTests(PipelineBase):
                 patch("catalog.services.get_offers", return_value=offers):
             run_search(str(search.id))
 
-    def test_results_are_saved_sorted_by_price(self):
+    def test_results_are_saved_in_rank_order(self):
         offers = [self.make_offer("a", "30000"), self.make_offer("b", "10000"), self.make_offer("c", "20000")]
         search = self.make_search()
         self.run_with_offers(search, offers)
@@ -93,7 +93,9 @@ class SearchResultTests(PipelineBase):
         self.assertEqual([r.offer.external_id for r in saved], ["b", "c", "a"])
         self.assertEqual([r.total_price for r in saved], [r.item_price for r in saved])
         self.assertTrue(all(r.delivery_price is None for r in saved))
-        self.assertFalse(any(r.is_recommended for r in saved))
+        self.assertEqual([r.is_recommended for r in saved], [True, False, False])
+        search.refresh_from_db()
+        self.assertEqual(search.recommended_offer, offers[1])
 
     def test_rerun_replaces_results(self):
         offers = [self.make_offer("a", "100"), self.make_offer("b", "200")]
@@ -168,3 +170,17 @@ class ResultsViewTests(PipelineBase):
     def test_foreign_results_are_hidden(self):
         other = SearchRequest.objects.create(raw_query="x", session_key="other")
         self.assertEqual(self.client.get(reverse("search:results", args=[other.id])).status_code, 404)
+
+
+class DeliveryTextTests(TestCase):
+    def text(self, **fields):
+        from .views import _delivery_text
+        return _delivery_text(SearchResult(**fields))
+
+    def test_method_price_and_days(self):
+        self.assertEqual(self.text(delivery_price=Decimal("499"), delivery_min_days=2, delivery_max_days=6,
+                                   delivery_source="shop", delivery_method="courier"), "курьер: 499 ₽, 2–6 дн.")
+
+    def test_zone_estimate_is_marked_approximate(self):
+        self.assertEqual(self.text(delivery_price=Decimal("317.2"), delivery_min_days=3, delivery_max_days=7,
+                                   delivery_source="zone", delivery_method="pickup"), "ПВЗ: ≈ 317 ₽, 3–7 дн.")

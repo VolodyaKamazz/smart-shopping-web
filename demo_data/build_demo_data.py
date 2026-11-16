@@ -253,6 +253,8 @@ SHOPS = [
             {"city": None, "cost": "499.00", "free_from": "7000.00", "min_days": 2, "max_days": 6},
             {"city": "Москва", "cost": "299.00", "free_from": "5000.00", "min_days": 1, "max_days": 2},
             {"city": "Санкт-Петербург", "cost": "349.00", "free_from": "5000.00", "min_days": 1, "max_days": 3},
+            {"city": None, "method": "pickup", "cost": "199.00", "free_from": "3000.00", "min_days": 2, "max_days": 7},
+            {"city": "Москва", "method": "pickup", "cost": "0.00", "free_from": None, "min_days": 1, "max_days": 2},
         ],
     },
     {
@@ -266,6 +268,8 @@ SHOPS = [
             {"city": None, "cost": "399.00", "free_from": "10000.00", "min_days": 3, "max_days": 8},
             {"city": "Москва", "cost": "199.00", "free_from": "3000.00", "min_days": 1, "max_days": 2},
             {"city": "Новосибирск", "cost": "349.00", "free_from": "10000.00", "min_days": 2, "max_days": 4},
+            {"city": None, "method": "pickup", "cost": "0.00", "free_from": None, "min_days": 3, "max_days": 8},
+            {"city": "Москва", "method": "pickup", "cost": "0.00", "free_from": None, "min_days": 0, "max_days": 1},
         ],
     },
     {
@@ -287,6 +291,9 @@ SHOPS = [
             {"city": "Новосибирск", "cost": "250.00", "free_from": "3000.00", "min_days": 1, "max_days": 2},
             {"city": "Томск", "cost": "250.00", "free_from": "3000.00", "min_days": 1, "max_days": 2},
             {"city": "Кемерово", "cost": "250.00", "free_from": "3000.00", "min_days": 1, "max_days": 2},
+            {"city": "Новосибирск", "method": "pickup", "cost": "0.00", "free_from": None, "min_days": 0, "max_days": 1},
+            {"city": "Томск", "method": "pickup", "cost": "0.00", "free_from": None, "min_days": 0, "max_days": 1},
+            {"city": "Кемерово", "method": "pickup", "cost": "0.00", "free_from": None, "min_days": 0, "max_days": 1},
         ],
     },
 ]

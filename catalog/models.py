@@ -1,4 +1,8 @@
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
+
+from .terms import OfferTerms
+from .validators import validate_payment_methods
 
 
 class Category(models.Model):
@@ -38,11 +42,12 @@ class Product(models.Model):
 class Shop(models.Model):
     name = models.CharField(max_length=200)
     url = models.URLField(blank=True)
-    rating = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True)
+    rating = models.DecimalField(max_digits=3, decimal_places=2, null=True, blank=True,
+                                 validators=[MinValueValidator(0), MaxValueValidator(5)])
     rating_count = models.PositiveIntegerField(default=0)
     origin_city = models.ForeignKey("delivery.City", null=True, blank=True, on_delete=models.SET_NULL)
     return_days = models.PositiveSmallIntegerField(null=True, blank=True)
-    payment_methods = models.JSONField(default=list, blank=True)
+    payment_methods = models.JSONField(default=list, blank=True, validators=[validate_payment_methods])
     warranty_months = models.PositiveSmallIntegerField(null=True, blank=True)
     feed_url = models.URLField(max_length=500, blank=True)
     refresh_hours = models.PositiveSmallIntegerField(default=6)
@@ -77,6 +82,17 @@ class Offer(models.Model):
 
     def __str__(self):
         return self.title_raw
+
+    @property
+    def effective_warranty_months(self):
+        return self.warranty_months if self.warranty_months is not None else self.shop.warranty_months
+
+    @property
+    def terms(self):
+        shop = self.shop
+        return OfferTerms(rating=shop.rating, rating_count=shop.rating_count,
+                          payment_methods=tuple(shop.payment_methods), return_days=shop.return_days,
+                          warranty_months=self.effective_warranty_months)
 
 
 class PriceHistory(models.Model):

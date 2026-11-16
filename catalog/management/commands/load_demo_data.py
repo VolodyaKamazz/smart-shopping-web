@@ -15,7 +15,7 @@ from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
 from catalog.models import Brand, Category, Shop
-from delivery.models import City, ShopDeliveryRule, ZoneRate
+from delivery.models import City, DeliveryMethod, ShopDeliveryRule, ZoneRate
 
 DATA_DIR = settings.BASE_DIR / "demo_data"
 
@@ -104,8 +104,10 @@ class Command(BaseCommand):
             shop_flags.append(created)
             for r in s["delivery_rules"]:
                 city = City.objects.get(name=r["city"]) if r["city"] else None
-                _, created = ShopDeliveryRule.objects.update_or_create(shop=shop, city=city, defaults={
-                    "cost": Decimal(r["cost"]), "free_from": Decimal(r["free_from"]),
-                    "min_days": r["min_days"], "max_days": r["max_days"]})
+                _, created = ShopDeliveryRule.objects.update_or_create(
+                    shop=shop, city=city, method=r.get("method", DeliveryMethod.COURIER.value), defaults={
+                        "cost": Decimal(r["cost"]),
+                        "free_from": Decimal(r["free_from"]) if r["free_from"] else None,
+                        "min_days": r["min_days"], "max_days": r["max_days"]})
                 rule_flags.append(created)
         return self._count(shop_flags), self._count(rule_flags)

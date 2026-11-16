@@ -1,40 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Умный Шопинг</title>
-    <!-- Подключаем Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
-<body>
-    <!-- Шапка сайта -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'search:home' %}">Умный Шопинг</a>
-            <div class="d-flex align-items-center gap-3">
+<body class="d-flex flex-column min-vh-100">
+    <header class="site-header">
+        <div class="container d-flex align-items-center justify-content-between py-3">
+            <a class="brand" href="{% url 'search:home' %}">Умный Шопинг</a>
+            <nav class="d-flex align-items-center gap-4">
                 {% if user.is_authenticated %}
-                <a class="text-white text-decoration-none" href="{% url 'accounts:profile' %}">Профиль</a>
-                <a class="text-white text-decoration-none" href="{% url 'accounts:cabinet' %}">Кабинет</a>
+                {% if user.city %}<span class="hdr-item">📍 {{ user.city.name }}</span>{% endif %}
+                <a class="hdr-item" href="{% url 'favorites:notifications' %}"><span class="text-danger">♡</span> Избранное</a>
+                <a class="hdr-item" href="{% url 'accounts:cabinet' %}">👤 Кабинет</a>
                 <form method="post" action="{% url 'accounts:logout' %}" class="m-0">
                     {% csrf_token %}
-                    <button class="btn btn-sm btn-outline-light" type="submit">Выйти</button>
+                    <button class="btn btn-sm btn-outline-secondary" type="submit">Выйти</button>
                 </form>
                 {% else %}
-                <a class="text-white text-decoration-none" href="{% url 'accounts:login' %}">Войти</a>
-                <a class="text-white text-decoration-none" href="{% url 'accounts:register' %}">Регистрация</a>
+                <a class="hdr-item" href="{% url 'accounts:register' %}">Регистрация</a>
+                <a class="hdr-item" href="{% url 'accounts:login' %}">👤 Войти</a>
                 {% endif %}
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Место, куда будут вставляться другие страницы -->
-    <div class="container">
+    <main class="container flex-grow-1">
         {% for message in messages %}
         <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags|default:'info' }}{% endif %}">{{ message }}</div>
         {% endfor %}
         {% block content %}
         {% endblock %}
-    </div>
+    </main>
+
+    <footer class="py-3 mt-5 text-center text-muted small">
+        © 2026 Умный Шопинг · Сравнение цен с учётом доставки
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

@@ -1,51 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
-    <!-- Сайдбар с фильтрами -->
-    <div class="col-md-3">
-        <h4>Фильтры</h4>
-        <div class="form-check mt-3">
-            <input class="form-check-input" type="checkbox" id="fastDelivery">
-            <label class="form-check-label" for="fastDelivery">Доставка завтра</label>
-        </div>
-        <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" id="freeDelivery">
-            <label class="form-check-label" for="freeDelivery">Бесплатная доставка</label>
-        </div>
-    </div>
+<h5 class="fw-bold mb-3">Результаты: {{ search.raw_query }}</h5>
 
-    <!-- Таблица результатов -->
-    <div class="col-md-9">
-        <h4>Результаты поиска</h4>
-        <table class="table table-hover mt-3">
-            <thead class="table-light">
-                <tr>
-                    <th>Магазин</th>
-                    <th>Товар</th>
-                    <th>Цена</th>
-                    <th>Доставка</th>
-                    <th>Действие</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Тестовые данные (заглушки) -->
-                <tr>
-                    <td>ДНС</td>
-                    <td>iPhone 15 Pro</td>
-                    <td>115 000 ₽</td>
-                    <td>Завтра (Бесплатно)</td>
-                    <td><button class="btn btn-sm btn-outline-success">В магазин</button></td>
-                </tr>
-                <tr>
-                    <td>Ситилинк</td>
-                    <td>iPhone 15 Pro</td>
-                    <td>112 000 ₽</td>
-                    <td>3 дня (500 ₽)</td>
-                    <td><button class="btn btn-sm btn-outline-success">В магазин</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+{% for warning in warnings %}
+<div class="alert alert-warning">{{ warning }}</div>
+{% endfor %}
+
+<div id="results-app" data-api="{% url 'search:results_api' search.id %}"
+     data-go="{% url 'search:go' 0 %}" data-criterion="{{ criterion }}">
+  <div id="reco"></div>
+
+  <div class="row g-3">
+    <aside class="col-lg-3">
+      <div class="filters">
+        <h6 class="fw-bold mb-3">Фильтры</h6>
+        <label class="flabel" for="priceMax">Макс. цена (₽)</label>
+        <input class="form-control mb-3" type="number" min="0" id="priceMax">
+        <label class="flabel" for="maxDays">Срок дост. (дней)</label>
+        <select class="form-select mb-3" id="maxDays">
+          <option value="">Любой</option><option>1</option><option>2</option><option>3</option><option>5</option><option>7</option>
+        </select>
+        <label class="flabel" for="shop">Магазин</label>
+        <select class="form-select mb-3" id="shop"><option value="">Все</option></select>
+        <label class="flabel" for="sort">Сортировка</label>
+        <select class="form-select mb-3" id="sort">
+          <option value="">По рекомендации</option><option value="price">По цене</option>
+          <option value="delivery">По сроку</option><option value="rating">По рейтингу</option>
+        </select>
+        <div class="flabel">Что важнее</div>
+        <div class="btn-group btn-group-sm w-100 mb-3" id="criteria">
+          {% for value, label in criteria %}
+          <button type="button" class="btn btn-outline-primary" data-criterion="{{ value }}">{{ label }}</button>
+          {% endfor %}
+        </div>
+        <button type="button" class="btn-find w-100" id="apply">Применить</button>
+        <button type="button" class="btn btn-link text-dark fw-semibold p-0 mt-2" id="reset">Сбросить</button>
+      </div>
+    </aside>
+
+    <section class="col-lg-9">
+      <div class="list-head"><span></span><span>Предложение</span><span>Цена</span><span>Доставка</span><span>Срок</span><span>Итого</span></div>
+      <div id="state" class="text-muted my-2"></div>
+      <div id="rows"></div>
+      <div class="pickbar">
+        <span class="pill" id="picked">Выбрано 0/3</span>
+        <button type="button" class="btn btn-light border rounded-pill px-4" id="clear">Очистить</button>
+        <button type="button" class="btn-find" id="compare" disabled title="Страница сравнения скоро появится">Сравнить выбранное →</button>
+      </div>
+    </section>
+  </div>
+  <noscript><div class="alert alert-danger">Для работы страницы нужен JavaScript.</div></noscript>
 </div>
 {% endblock %}

@@ -93,7 +93,7 @@ class SearchResultTests(PipelineBase):
         self.assertEqual([r.offer.external_id for r in saved], ["b", "c", "a"])
         self.assertEqual([r.total_price for r in saved], [r.item_price for r in saved])
         self.assertTrue(all(r.delivery_price is None for r in saved))
-        self.assertFalse(any(r.is_recommended for r in saved))
+        self.assertEqual([r.is_recommended for r in saved], [True, False, False])
 
     def test_rerun_replaces_results(self):
         offers = [self.make_offer("a", "100"), self.make_offer("b", "200")]
@@ -159,11 +159,11 @@ class ResultsViewTests(PipelineBase):
         self.assertEqual(items[0]["delivery"], "—")
         self.assertEqual(response.context["warnings"], [])
 
-    def test_warning_when_nothing_found(self):
+    def test_no_warning_when_nothing_found(self):
         search = self.start_search([])
         response = self.client.get(reverse("search:results", args=[search.id]))
         self.assertEqual(response.context["items"], [])
-        self.assertEqual(response.context["warnings"], ["Результаты пока не рассчитываются"])
+        self.assertEqual(response.context["warnings"], [])
 
     def test_foreign_results_are_hidden(self):
         other = SearchRequest.objects.create(raw_query="x", session_key="other")

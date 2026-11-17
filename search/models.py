@@ -42,6 +42,7 @@ class SearchResult(models.Model):
     delivery_min_days = models.PositiveSmallIntegerField(null=True, blank=True)
     delivery_max_days = models.PositiveSmallIntegerField(null=True, blank=True)
     delivery_source = models.CharField(max_length=10, blank=True)
+    delivery_method = models.CharField(max_length=10, blank=True)
     total_price = models.DecimalField(max_digits=12, decimal_places=2)
     is_recommended = models.BooleanField(default=False)
 

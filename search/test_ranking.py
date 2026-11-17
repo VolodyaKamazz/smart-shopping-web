@@ -100,7 +100,7 @@ class DeliveryStubTests(RankingBase):
         self.assertEqual((result.delivery_price, result.delivery_source), (700, "cdek"))
 
     def test_delivery_error_is_isolated(self):
-        def broken(offer, city):
+        def broken(offer, city, *args):
             if offer.pk == self.o_cheap.pk:
                 raise RuntimeError("boom")
             return DeliveryInfo(price=Decimal("100"), min_days=1, max_days=2, source="cdek")
@@ -229,10 +229,11 @@ class CriterionSwitchTests(RankingBase):
 
     def test_page_shows_recommendation_and_selector(self):
         html = self.client.get(self.url, {"criterion": "price"}).content.decode()
-        self.assertIn("Рекомендация", html)
-        self.assertIn("Дешёвый", html)
-        self.assertIn('name="criterion"', html)
-        self.assertIn("Скорость", html)
+        self.assertIn('data-criterion="price"', html)
+        self.assertIn('id="reco"', html)
+        self.assertIn('data-api="' + reverse("search:results_api", args=[self.search.id]) + '"', html)
+        for value in ("balanced", "price", "speed"):
+            self.assertIn(f'<button type="button" class="btn btn-outline-primary" data-criterion="{value}">', html)
 
 
 class SortAndFilterTests(RankingBase):
@@ -302,7 +303,8 @@ class ResultsApiTests(RankingBase):
         self.assertEqual((data["status"], data["count"], data["sort"]), ("done", 3, "recommendation"))
         self.assertEqual(set(data["items"][0]), {
             "offer_id", "shop", "title", "price", "delivery_price", "delivery_min_days", "delivery_max_days",
-            "total_price", "rating", "rank", "score", "is_recommended", "url"})
+            "total_price", "rating", "rank", "score", "is_recommended", "payment_methods", "return_days",
+            "warranty_months", "url"})
 
     def test_numbers_are_numeric(self):
         item = next(i for i in self.client.get(self.url).json()["items"] if i["offer_id"] == self.o_cheap.id)

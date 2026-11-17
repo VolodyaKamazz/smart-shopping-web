@@ -116,6 +116,7 @@ def _float(value):
 
 def _api_item(result):
     offer = result.offer
+    terms = offer.terms
     return {
         "offer_id": offer.id,
         "shop": offer.shop.name,
@@ -129,6 +130,9 @@ def _api_item(result):
         "rank": result.rank,
         "score": result.score,
         "is_recommended": result.is_recommended,
+        "payment_methods": terms.payment_labels,
+        "return_days": terms.return_days,
+        "warranty_months": terms.warranty_months,
         "url": reverse("search:go", args=[offer.id]),
     }
 

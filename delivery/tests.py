@@ -5,6 +5,7 @@ from django.core.management import call_command
 from django.db import connection
 from django.test import TestCase
 
+from catalog.models import Shop
 from delivery.models import City, ShopDeliveryRule, ZoneRate
 
 WEIGHTS = [Decimal(w) for w in ("0.5", "1", "2", "3", "5")]
@@ -53,9 +54,18 @@ class ZoneRateTests(TestCase):
         self.assertEqual(City.objects.get(name="Томск").zone, City.objects.get(name="Новосибирск").zone)
 
     def test_shop_rules(self):
-        self.assertEqual(ShopDeliveryRule.objects.count(), 11)
+        self.assertEqual(ShopDeliveryRule.objects.count(), 18)
+        self.assertEqual(ShopDeliveryRule.objects.filter(method="pickup").count(), 7)
         for r in ShopDeliveryRule.objects.all():
             self.assertLessEqual(r.min_days, r.max_days)
+
+    def test_every_shop_has_default_courier_rule(self):
+        for shop in Shop.objects.all():
+            self.assertTrue(shop.delivery_rules.filter(city__isnull=True, method="courier").exists(), shop.name)
+
+    def test_reload_does_not_duplicate_rules(self):
+        call_command("load_demo_data", verbosity=0)
+        self.assertEqual(ShopDeliveryRule.objects.count(), 18)
 
 
 class CacheTableTests(TestCase):

@@ -1,9 +1,11 @@
+from django import forms
 from django.contrib import admin
 from django.db.models import Count
 
 from delivery.models import ShopDeliveryRule
 
 from . import models
+from .terms import PAYMENT_METHODS
 
 admin.site.site_header = "Умный Шопинг — администрирование"
 admin.site.site_title = "Умный Шопинг"
@@ -46,14 +48,30 @@ class ProductAdmin(admin.ModelAdmin):
 class ShopDeliveryRuleInline(admin.TabularInline):
     model = ShopDeliveryRule
     extra = 0
-    fields = ("city", "cost", "free_from", "min_days", "max_days")
+    fields = ("city", "method", "cost", "free_from", "min_days", "max_days", "is_active")
     autocomplete_fields = ("city",)
+
+
+class ShopAdminForm(forms.ModelForm):
+    payment_methods = forms.MultipleChoiceField(label="Способы оплаты", choices=PAYMENT_METHODS,
+                                                widget=forms.CheckboxSelectMultiple, required=False)
+
+    class Meta:
+        model = models.Shop
+        fields = "__all__"
 
 
 @admin.register(models.Shop)
 class ShopAdmin(admin.ModelAdmin):
-    list_display = ("name", "url", "rating", "rating_count", "origin_city", "refresh_hours",
-                    "last_import_at", "is_active", "offers_count")
+    form = ShopAdminForm
+    fieldsets = (
+        (None, {"fields": ("name", "url", "origin_city", "is_active")}),
+        ("Условия для покупателя", {"fields": ("rating", "rating_count", "return_days", "warranty_months",
+                                               "payment_methods")}),
+        ("Импорт", {"fields": ("feed_url", "refresh_hours", "category_map", "last_import_at")}),
+    )
+    list_display = ("name", "url", "rating", "rating_count", "return_days", "warranty_months", "origin_city",
+                    "refresh_hours", "last_import_at", "is_active", "offers_count")
     list_filter = ("is_active", "origin_city")
     search_fields = ("name", "url", "feed_url")
     list_select_related = ("origin_city",)
@@ -82,7 +100,8 @@ class ShopAdmin(admin.ModelAdmin):
 
 @admin.register(models.Offer)
 class OfferAdmin(admin.ModelAdmin):
-    list_display = ("title_raw", "shop", "product", "price", "old_price", "in_stock", "is_active", "last_seen_at")
+    list_display = ("title_raw", "shop", "product", "price", "old_price", "in_stock", "warranty_months", "is_active",
+                    "last_seen_at")
     list_filter = ("shop", "is_active", "in_stock")
     search_fields = ("title_raw", "external_id", "product__name", "product__model")
     list_select_related = ("shop", "product")

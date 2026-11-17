@@ -43,6 +43,22 @@
         "free_from": "5000.00",
         "min_days": 1,
         "max_days": 3
+      },
+      {
+        "city": null,
+        "method": "pickup",
+        "cost": "199.00",
+        "free_from": "3000.00",
+        "min_days": 2,
+        "max_days": 7
+      },
+      {
+        "city": "Москва",
+        "method": "pickup",
+        "cost": "0.00",
+        "free_from": null,
+        "min_days": 1,
+        "max_days": 2
       }
     ]
   },
@@ -89,6 +105,22 @@
         "free_from": "10000.00",
         "min_days": 2,
         "max_days": 4
+      },
+      {
+        "city": null,
+        "method": "pickup",
+        "cost": "0.00",
+        "free_from": null,
+        "min_days": 3,
+        "max_days": 8
+      },
+      {
+        "city": "Москва",
+        "method": "pickup",
+        "cost": "0.00",
+        "free_from": null,
+        "min_days": 0,
+        "max_days": 1
       }
     ]
   },
@@ -149,6 +181,30 @@
         "free_from": "3000.00",
         "min_days": 1,
         "max_days": 2
+      },
+      {
+        "city": "Новосибирск",
+        "method": "pickup",
+        "cost": "0.00",
+        "free_from": null,
+        "min_days": 0,
+        "max_days": 1
+      },
+      {
+        "city": "Томск",
+        "method": "pickup",
+        "cost": "0.00",
+        "free_from": null,
+        "min_days": 0,
+        "max_days": 1
+      },
+      {
+        "city": "Кемерово",
+        "method": "pickup",
+        "cost": "0.00",
+        "free_from": null,
+        "min_days": 0,
+        "max_days": 1
       }
     ]
   }

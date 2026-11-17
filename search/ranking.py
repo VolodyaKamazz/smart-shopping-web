@@ -1,9 +1,6 @@
 import logging
-from decimal import Decimal
 
 from delivery import services as delivery_services
-from delivery.models import ShopDeliveryRule
-from delivery.services import DeliveryInfo
 from recommender import services as recommender
 
 from .models import SearchResult
@@ -13,42 +10,27 @@ logger = logging.getLogger(__name__)
 PRIORITIES = recommender.PRIORITIES
 CRITERIA = [("balanced", "Баланс"), ("price", "Цена"), ("speed", "Скорость")]
 MAX_RESULTS = 50
+DELIVERY_FIELDS = ("delivery_price", "delivery_min_days", "delivery_max_days", "delivery_source", "delivery_method")
 
 
-class RuleLookup:
-    def __init__(self, offers, city):
-        self.city = city
-        self.rules = {}
-        rules = ShopDeliveryRule.objects.filter(shop_id__in={offer.shop_id for offer in offers})
-        for rule in rules:
-            self.rules.setdefault(rule.shop_id, []).append(rule)
-
-    def get(self, offer):
-        shop_rules = self.rules.get(offer.shop_id, [])
-        rule = next((r for r in shop_rules if r.city_id == self.city.pk), None)
-        rule = rule or next((r for r in shop_rules if r.city_id is None), None)
-        if rule is None:
-            return None
-        free = rule.free_from is not None and offer.price >= rule.free_from
-        return DeliveryInfo(price=Decimal(0) if free else rule.cost, min_days=rule.min_days,
-                            max_days=rule.max_days, source="shop")
-
-
-def delivery_map(offers, city):
+def delivery_map(offers, city, priority="balanced"):
     if city is None:
         return {offer.id: None for offer in offers}
-    lookup = None
+    context = delivery_services.DeliveryContext(offers, city)
     infos = {}
     for offer in offers:
         try:
-            infos[offer.id] = delivery_services.calc_delivery(offer, city)
-        except NotImplementedError:
-            lookup = lookup or RuleLookup(offers, city)
-            infos[offer.id] = lookup.get(offer)
+            infos[offer.id] = delivery_services.calc_delivery(offer, city, priority, context)
         except Exception:
             logger.exception("Не удалось рассчитать доставку для предложения %s", offer.id)
             infos[offer.id] = None
     return infos
+
+
+def delivery_fields(info):
+    if info is None:
+        return dict(zip(DELIVERY_FIELDS, (None, None, None, "", "")))
+    return dict(zip(DELIVERY_FIELDS, (info.price, info.min_days, info.max_days, info.source, info.method)))
 
 
 def offer_input(offer, info):
@@ -89,22 +71,18 @@ def apply_recommendation(search, ranked, offers_by_id, priority, base_facts=None
 
 def rank_and_save(search, offers):
     profile = profile_for(search)
-    infos = delivery_map(offers, search.city)
+    infos = delivery_map(offers, search.city, profile["priority"])
     offers_by_id = {offer.id: offer for offer in offers}
     ranked = recommender.rank([offer_input(o, infos[o.id]) for o in offers], profile)[:MAX_RESULTS]
 
     search.results.all().delete()
-    rows = []
-    for item in ranked:
-        info = infos[item["id"]]
-        rows.append(SearchResult(
+    rows = [
+        SearchResult(
             search=search, offer=offers_by_id[item["id"]], rank=item["rank"], score=item["score"],
-            breakdown=item["breakdown"], item_price=item["price"],
-            delivery_price=info.price if info else None,
-            delivery_min_days=info.min_days if info else None,
-            delivery_max_days=info.max_days if info else None,
-            delivery_source=info.source if info else "",
-            total_price=item["total_price"], is_recommended=item["is_recommended"]))
+            breakdown=item["breakdown"], item_price=item["price"], total_price=item["total_price"],
+            is_recommended=item["is_recommended"], **delivery_fields(infos[item["id"]]))
+        for item in ranked
+    ]
     SearchResult.objects.bulk_create(rows)
 
     budget = profile["budget_max"]
@@ -118,20 +96,18 @@ def rank_and_save(search, offers):
 
 def recalculate(search, priority):
     results = list(search.results.select_related("offer__shop"))
-    inputs = [offer_input(r.offer, _stored_info(r)) | {"price": r.item_price} for r in results]
+    infos = delivery_map([r.offer for r in results], search.city, priority)
+    inputs = [offer_input(r.offer, infos[r.offer_id]) | {"price": r.item_price} for r in results]
     ranked = recommender.rank(inputs, {"priority": priority})
     by_result = {r.offer_id: r for r in results}
     for item in ranked:
         result = by_result[item["id"]]
         result.rank, result.score = item["rank"], item["score"]
         result.breakdown, result.is_recommended = item["breakdown"], item["is_recommended"]
-    SearchResult.objects.bulk_update(results, ["rank", "score", "breakdown", "is_recommended"])
+        result.total_price = item["total_price"]
+        for name, value in delivery_fields(infos[item["id"]]).items():
+            setattr(result, name, value)
+    SearchResult.objects.bulk_update(
+        results, ["rank", "score", "breakdown", "is_recommended", "total_price", *DELIVERY_FIELDS])
     base_facts = {key: search.facts.get(key) for key in ("budget_max", "excluded_over_budget") if key in search.facts}
     apply_recommendation(search, ranked, {r.offer_id: r.offer for r in results}, priority, base_facts)
-
-
-def _stored_info(result):
-    if result.delivery_price is None:
-        return None
-    return DeliveryInfo(price=result.delivery_price, min_days=result.delivery_min_days,
-                        max_days=result.delivery_max_days, source=result.delivery_source)

@@ -299,12 +299,12 @@ class ResultsApiTests(RankingBase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response["Content-Type"], "application/json")
         data = response.json()
-        self.assertEqual(set(data), {"status", "criterion", "sort", "recommendation", "count", "items"})
+        self.assertEqual(set(data), {"status", "criterion", "sort", "recommendation", "count", "shops", "items"})
         self.assertEqual((data["status"], data["count"], data["sort"]), ("done", 3, "recommendation"))
         self.assertEqual(set(data["items"][0]), {
-            "offer_id", "shop", "title", "price", "delivery_price", "delivery_min_days", "delivery_max_days",
-            "total_price", "rating", "rank", "score", "is_recommended", "payment_methods", "return_days",
-            "warranty_months", "url"})
+            "offer_id", "product_id", "is_favorite", "shop_id", "shop", "title", "price", "delivery_price",
+            "delivery_min_days", "delivery_max_days", "total_price", "rating", "rank", "score", "is_recommended",
+            "payment_methods", "return_days", "warranty_months", "url"})
 
     def test_numbers_are_numeric(self):
         item = next(i for i in self.client.get(self.url).json()["items"] if i["offer_id"] == self.o_cheap.id)

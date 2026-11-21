@@ -8,13 +8,16 @@
 {% endfor %}
 
 <div id="results-app" data-api="{% url 'search:results_api' search.id %}"
-     data-go="{% url 'search:go' 0 %}" data-criterion="{{ criterion }}">
+     data-go="{% url 'search:go' 0 %}" data-criterion="{{ criterion }}"
+     data-fav="{% url 'favorites:toggle' 0 %}" data-csrf="{{ csrf_token }}">
   <div id="reco"></div>
 
   <div class="row g-3">
     <aside class="col-lg-3">
       <div class="filters">
         <h6 class="fw-bold mb-3">Фильтры</h6>
+        <label class="flabel" for="priceMin">Мин. цена (₽)</label>
+        <input class="form-control mb-3" type="number" min="0" id="priceMin">
         <label class="flabel" for="priceMax">Макс. цена (₽)</label>
         <input class="form-control mb-3" type="number" min="0" id="priceMax">
         <label class="flabel" for="maxDays">Срок дост. (дней)</label>

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5 class="fw-bold mb-3">Избранное</h5>
+{% if not user.is_authenticated %}
+<p class="text-muted small">Избранное хранится в вашей сессии. Войдите или зарегистрируйтесь, и оно сохранится в аккаунте.</p>
+{% endif %}
+{% if rows %}
+<div class="table-responsive">
+  <table class="table align-middle">
+    <thead><tr><th>Товар</th><th>Магазин</th><th>Цена при добавлении</th><th>Сейчас</th><th>Изменение</th><th></th></tr></thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row.product.name }}</td>
+        <td>{{ row.shop|default:"—" }}</td>
+        <td>{{ row.fixed }}</td>
+        <td>{{ row.current }}</td>
+        <td>
+          {% if row.trend == "down" %}<span class="text-success">↓ {{ row.diff }}</span>
+          {% elif row.trend == "up" %}<span class="text-danger">↑ {{ row.diff }}</span>
+          {% elif row.trend == "same" %}<span class="text-muted">без изменений</span>
+          {% else %}—{% endif %}
+        </td>
+        <td>
+          <form method="post" action="{% url 'favorites:toggle' row.product.id %}" class="m-0">
+            {% csrf_token %}
+            <button class="btn btn-sm btn-outline-secondary" type="submit">Убрать</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<p class="text-muted">Пока пусто. Нажмите ♡ у предложения на странице результатов.</p>
+{% endif %}
+{% if user.is_authenticated %}<a href="{% url 'favorites:notifications' %}">Уведомления о снижении цены</a>{% endif %}
+{% endblock %}

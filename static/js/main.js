@@ -4,9 +4,9 @@
   if (!app) return;
 
   const MAX_PICK = 3;
-  const state = { criterion: app.dataset.criterion || 'balanced', sort: '', priceMax: '', maxDays: '', shop: '' };
+  const state = { criterion: app.dataset.criterion || 'balanced', sort: '', priceMin: '', priceMax: '', maxDays: '', shop: '' };
   const picked = new Set();
-  const shops = new Set();
+  const favState = new Map();
   let requestId = 0;
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g,
@@ -28,10 +28,19 @@
       '<div class="col-md-4"><b>Гарантия:</b> ' + val(i.warranty_months, (v) => esc(v) + ' мес.') + '</div></div>';
   }
 
+  function isFav(i) { return favState.has(i.product_id) ? favState.get(i.product_id) : !!i.is_favorite; }
+
+  function heart(i) {
+    if (i.product_id == null) return '<span class="heart" style="opacity:.3" title="Товара нет в каталоге">♡</span>';
+    const on = isFav(i);
+    return '<span class="heart" style="cursor:pointer" data-product="' + i.product_id + '" data-offer="' + i.offer_id +
+      '" title="' + (on ? 'Убрать из избранного' : 'В избранное') + '">' + (on ? '♥' : '♡') + '</span>';
+  }
+
   function card(i) {
     const rating = i.rating == null ? '' : ' · ★ ' + Number(i.rating).toFixed(1).replace('.', ',');
     return '<div class="offer' + (i.is_recommended ? ' recommended' : '') + '">' +
-      '<div class="sel"><span class="heart" title="В избранное">♡</span>' +
+      '<div class="sel">' + heart(i) +
       '<input type="checkbox" class="form-check-input pick" data-id="' + i.offer_id + '"' + (picked.has(i.offer_id) ? ' checked' : '') + '></div>' +
       '<div class="main"><div class="thumb">🖼</div><div>' +
       '<div class="title">' + esc(i.title) + '</div>' +
@@ -57,16 +66,16 @@
 
   function updateBar() { $('picked').textContent = 'Выбрано ' + picked.size + '/' + MAX_PICK; }
 
-  function updateShops(items) {
-    items.forEach((i) => shops.add(i.shop));
-    $('shop').innerHTML = '<option value="">Все</option>' + [...shops].sort().map((s) =>
-      '<option' + (s === state.shop ? ' selected' : '') + '>' + esc(s) + '</option>').join('');
+  function updateShops(shops) {
+    $('shop').innerHTML = '<option value="">Все</option>' + (shops || []).map((s) =>
+      '<option value="' + esc(s.id) + '"' + (String(s.id) === state.shop ? ' selected' : '') + '>' +
+      esc(s.name) + ' (' + s.count + ')</option>').join('');
   }
 
   function render(data) {
     state.criterion = data.criterion || state.criterion;
-    updateShops(data.items);
-    const items = data.items.filter((i) => !state.shop || i.shop === state.shop);
+    updateShops(data.shops);
+    const items = data.items;
     reco(data.recommendation);
     $('rows').innerHTML = items.map(card).join('');
     $('state').textContent = data.status !== 'done' ? 'Поиск ещё выполняется…'
@@ -80,7 +89,9 @@
     const id = ++requestId;
     const q = new URLSearchParams({ criterion: state.criterion });
     if (state.sort) q.set('sort', state.sort);
+    if (state.priceMin !== '') q.set('price_min', state.priceMin);
     if (state.priceMax !== '') q.set('price_max', state.priceMax);
+    if (state.shop !== '') q.set('shop', state.shop);
     if (state.maxDays !== '') q.set('delivery_max_days', state.maxDays);
     $('state').textContent = 'Загрузка…';
     try {
@@ -94,18 +105,39 @@
   }
 
   $('apply').addEventListener('click', () => {
-    state.priceMax = $('priceMax').value; state.maxDays = $('maxDays').value;
+    state.priceMin = $('priceMin').value; state.priceMax = $('priceMax').value; state.maxDays = $('maxDays').value;
     state.shop = $('shop').value; state.sort = $('sort').value; load();
   });
   $('reset').addEventListener('click', () => {
-    $('priceMax').value = ''; $('maxDays').value = ''; $('shop').value = ''; $('sort').value = '';
-    Object.assign(state, { priceMax: '', maxDays: '', shop: '', sort: '' }); load();
+    $('priceMin').value = ''; $('priceMax').value = ''; $('maxDays').value = ''; $('shop').value = ''; $('sort').value = '';
+    Object.assign(state, { priceMin: '', priceMax: '', maxDays: '', shop: '', sort: '' }); load();
   });
   $('criteria').addEventListener('click', (e) => {
     const b = e.target.closest('button[data-criterion]');
     if (b) { state.criterion = b.dataset.criterion; load(); }
   });
-  $('rows').addEventListener('click', (e) => {
+  $('rows').addEventListener('click', async (e) => {
+    const h = e.target.closest('.heart[data-product]');
+    if (h) {
+      const pid = Number(h.dataset.product);
+      const body = new URLSearchParams({ offer_id: h.dataset.offer });
+      try {
+        const resp = await fetch(app.dataset.fav.replace('/0/', '/' + pid + '/'), {
+          method: 'POST', body,
+          headers: { 'X-CSRFToken': app.dataset.csrf, 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' },
+        });
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const data = await resp.json();
+        favState.set(pid, data.is_favorite);
+        document.querySelectorAll('.heart[data-product="' + pid + '"]').forEach((el) => {
+          el.textContent = data.is_favorite ? '♥' : '♡';
+          el.title = data.is_favorite ? 'Убрать из избранного' : 'В избранное';
+        });
+      } catch (err) {
+        $('state').innerHTML = '<span class="text-danger">Не удалось обновить избранное.</span>';
+      }
+      return;
+    }
     const b = e.target.closest('button[data-toggle]');
     if (!b) return;
     const open = $('d-' + b.dataset.toggle).classList.toggle('d-none') === false;

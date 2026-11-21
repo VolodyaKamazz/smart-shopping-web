@@ -16,13 +16,14 @@
             <nav class="d-flex align-items-center gap-4">
                 {% if user.is_authenticated %}
                 {% if user.city %}<span class="hdr-item">📍 {{ user.city.name }}</span>{% endif %}
-                <a class="hdr-item" href="{% url 'favorites:notifications' %}"><span class="text-danger">♡</span> Избранное</a>
+                <a class="hdr-item" href="{% url 'favorites:list' %}"><span class="text-danger">♡</span> Избранное</a>
                 <a class="hdr-item" href="{% url 'accounts:cabinet' %}">👤 Кабинет</a>
                 <form method="post" action="{% url 'accounts:logout' %}" class="m-0">
                     {% csrf_token %}
                     <button class="btn btn-sm btn-outline-secondary" type="submit">Выйти</button>
                 </form>
                 {% else %}
+                <a class="hdr-item" href="{% url 'favorites:list' %}"><span class="text-danger">♡</span> Избранное</a>
                 <a class="hdr-item" href="{% url 'accounts:register' %}">Регистрация</a>
                 <a class="hdr-item" href="{% url 'accounts:login' %}">👤 Войти</a>
                 {% endif %}

@@ -4,6 +4,7 @@ from . import views
 
 app_name = "favorites"
 urlpatterns = [
+    path("favorites/", views.favorite_list, name="list"),
     path("favorites/<int:product_id>/toggle/", views.toggle, name="toggle"),
     path("notifications/", views.notifications, name="notifications"),
 ]

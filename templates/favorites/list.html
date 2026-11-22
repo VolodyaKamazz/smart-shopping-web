@@ -1,40 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h5 class="fw-bold mb-3">Избранное</h5>
-{% if not user.is_authenticated %}
+<a class="btn-back mt-2" href="{% url 'search:home' %}" onclick="if (history.length > 1) { history.back(); return false; }">← К результатам</a>
+<h6 class="fw-bold mt-3 mb-3">Избранные товары</h6>
+
+{% if not user.is_authenticated and rows %}
 <p class="text-muted small">Избранное хранится в вашей сессии. Войдите или зарегистрируйтесь, и оно сохранится в аккаунте.</p>
 {% endif %}
-{% if rows %}
-<div class="table-responsive">
-  <table class="table align-middle">
-    <thead><tr><th>Товар</th><th>Магазин</th><th>Цена при добавлении</th><th>Сейчас</th><th>Изменение</th><th></th></tr></thead>
-    <tbody>
-      {% for row in rows %}
-      <tr>
-        <td>{{ row.product.name }}</td>
-        <td>{{ row.shop|default:"—" }}</td>
-        <td>{{ row.fixed }}</td>
-        <td>{{ row.current }}</td>
-        <td>
-          {% if row.trend == "down" %}<span class="text-success">↓ {{ row.diff }}</span>
-          {% elif row.trend == "up" %}<span class="text-danger">↑ {{ row.diff }}</span>
-          {% elif row.trend == "same" %}<span class="text-muted">без изменений</span>
-          {% else %}—{% endif %}
-        </td>
-        <td>
-          <form method="post" action="{% url 'favorites:toggle' row.product.id %}" class="m-0">
-            {% csrf_token %}
-            <button class="btn btn-sm btn-outline-secondary" type="submit">Убрать</button>
-          </form>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+{% for row in rows %}
+<div class="fav-card">
+  <div class="thumb">🖼</div>
+  <div>
+    <div class="fav-name">{{ row.product.name }}</div>
+    <div class="fav-meta">
+      <span>Цена при добавлении: {{ row.fixed }}</span>
+      <span>Сейчас: {{ row.current }}
+        {% if row.trend == "down" %}<b class="text-success">↓ {{ row.diff }}</b>
+        {% elif row.trend == "up" %}<b class="text-danger">↑ {{ row.diff }}</b>{% endif %}</span>
+      {% if row.shop %}<span>магазин: {{ row.shop }}</span>{% endif %}
+    </div>
+  </div>
+  <form method="post" action="{% url 'favorites:toggle' row.product.id %}" class="ms-auto m-0">
+    {% csrf_token %}
+    <button class="heart-btn" type="submit" title="Убрать из избранного">♡</button>
+  </form>
 </div>
-{% else %}
-<p class="text-muted">Пока пусто. Нажмите ♡ у предложения на странице результатов.</p>
-{% endif %}
+{% empty %}
+<div class="state-box">
+  <div class="fw-semibold mb-1">В избранном пока ничего нет</div>
+  <div class="text-muted mb-3">Нажмите ♡ у предложения на странице результатов.</div>
+  <a class="btn-find text-decoration-none" href="{% url 'search:home' %}">Перейти к поиску</a>
+</div>
+{% endfor %}
+
 {% if user.is_authenticated %}<a href="{% url 'favorites:notifications' %}">Уведомления о снижении цены</a>{% endif %}
 {% endblock %}

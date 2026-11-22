@@ -8,13 +8,17 @@
 {% endfor %}
 
 <div id="results-app" data-api="{% url 'search:results_api' search.id %}"
-     data-go="{% url 'search:go' 0 %}" data-criterion="{{ criterion }}">
+     data-go="{% url 'search:go' 0 %}" data-criterion="{{ criterion }}"
+     data-fav="{% url 'favorites:toggle' 0 %}" data-csrf="{{ csrf_token }}">
+  <div id="dash">
   <div id="reco"></div>
 
   <div class="row g-3">
     <aside class="col-lg-3">
       <div class="filters">
         <h6 class="fw-bold mb-3">Фильтры</h6>
+        <label class="flabel" for="priceMin">Мин. цена (₽)</label>
+        <input class="form-control mb-3" type="number" min="0" id="priceMin">
         <label class="flabel" for="priceMax">Макс. цена (₽)</label>
         <input class="form-control mb-3" type="number" min="0" id="priceMax">
         <label class="flabel" for="maxDays">Срок дост. (дней)</label>
@@ -46,9 +50,16 @@
       <div class="pickbar">
         <span class="pill" id="picked">Выбрано 0/3</span>
         <button type="button" class="btn btn-light border rounded-pill px-4" id="clear">Очистить</button>
-        <button type="button" class="btn-find" id="compare" disabled title="Страница сравнения скоро появится">Сравнить выбранное →</button>
+        <button type="button" class="btn-find" id="compare" disabled title="Выберите минимум два предложения">Сравнить выбранное →</button>
       </div>
     </section>
+  </div>
+  </div>
+
+  <div id="compare-view" class="d-none">
+    <button type="button" class="btn-back" id="cmp-back">← К результатам</button>
+    <h6 class="fw-bold mt-3 mb-3">Сравнение товаров</h6>
+    <div class="row g-3" id="cmp-cards"></div>
   </div>
   <noscript><div class="alert alert-danger">Для работы страницы нужен JavaScript.</div></noscript>
 </div>

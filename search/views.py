@@ -9,9 +9,10 @@ from django.views.decorators.http import require_POST
 
 from catalog.models import Offer
 from delivery.models import City
+from favorites.owners import favorite_product_ids
 
 from . import ranking
-from .listing import current_sort, select_results
+from .listing import current_sort, select_results, shops_of
 from .models import OfferClick, SearchRequest
 
 
@@ -69,7 +70,7 @@ def _delivery_text(result):
     return f"{price}, {days}"
 
 
-def _result_item(result):
+def _result_item(result, favorites=frozenset()):
     offer = result.offer
     return {
         "offer_id": offer.id,
@@ -80,7 +81,7 @@ def _result_item(result):
         "total": _money(result.total_price),
         "rating": offer.shop.rating,
         "is_recommended": result.is_recommended,
-        "is_favorite": False,
+        "is_favorite": offer.product_id in favorites,
     }
 
 
@@ -114,11 +115,14 @@ def _float(value):
     return None if value is None else float(value)
 
 
-def _api_item(result):
+def _api_item(result, favorites=frozenset()):
     offer = result.offer
     terms = offer.terms
     return {
         "offer_id": offer.id,
+        "product_id": offer.product_id,
+        "is_favorite": offer.product_id in favorites,
+        "shop_id": offer.shop_id,
         "shop": offer.shop.name,
         "title": offer.title_raw,
         "price": _float(result.item_price),
@@ -138,10 +142,11 @@ def _api_item(result):
 
 
 def results(request, search_id):
-    """Дашборд. GET: criterion (balanced|price|speed), sort (price|delivery|rating|total), price_max, delivery_max_days."""
+    """Дашборд. GET: criterion (balanced|price|speed), sort (price|delivery|rating|total), price_min, price_max, shop, delivery_max_days."""
     search = _own_search(request, search_id)
     _sync_criterion(request, search)
-    items = [_result_item(r) for r in select_results(search, request.GET)]
+    favorites = favorite_product_ids(request)
+    items = [_result_item(r, favorites) for r in select_results(search, request.GET)]
     return render(request, "results.html", {
         "search": search,
         "recommendation": _recommendation(search),
@@ -157,13 +162,15 @@ def results_api(request, search_id):
     search = _own_search(request, search_id)
     _sync_criterion(request, search)
     selected = select_results(search, request.GET)
+    favorites = favorite_product_ids(request)
     return JsonResponse({
         "status": search.status,
         "criterion": _current_criterion(search),
         "sort": current_sort(request.GET) or "recommendation",
         "recommendation": _recommendation(search),
         "count": len(selected),
-        "items": [_api_item(r) for r in selected],
+        "shops": shops_of(search),
+        "items": [_api_item(r, favorites) for r in selected],
     }, json_dumps_params={"ensure_ascii": False})
 
 

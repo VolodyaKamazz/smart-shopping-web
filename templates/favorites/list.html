@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a class="btn-back mt-2" href="{% url 'search:home' %}" onclick="if (history.length > 1) { history.back(); return false; }">← К результатам</a>
+<h6 class="fw-bold mt-3 mb-3">Избранные товары</h6>
+
+{% if not user.is_authenticated and rows %}
+<p class="text-muted small">Избранное хранится в вашей сессии. Войдите или зарегистрируйтесь, и оно сохранится в аккаунте.</p>
+{% endif %}
+
+{% for row in rows %}
+<div class="fav-card">
+  <div class="thumb">🖼</div>
+  <div>
+    <div class="fav-name">{{ row.product.name }}</div>
+    <div class="fav-meta">
+      <span>Цена при добавлении: {{ row.fixed }}</span>
+      <span>Сейчас: {{ row.current }}
+        {% if row.trend == "down" %}<b class="text-success">↓ {{ row.diff }}</b>
+        {% elif row.trend == "up" %}<b class="text-danger">↑ {{ row.diff }}</b>{% endif %}</span>
+      {% if row.shop %}<span>магазин: {{ row.shop }}</span>{% endif %}
+    </div>
+  </div>
+  <form method="post" action="{% url 'favorites:toggle' row.product.id %}" class="ms-auto m-0">
+    {% csrf_token %}
+    <button class="heart-btn" type="submit" title="Убрать из избранного">♡</button>
+  </form>
+</div>
+{% empty %}
+<div class="state-box">
+  <div class="fw-semibold mb-1">В избранном пока ничего нет</div>
+  <div class="text-muted mb-3">Нажмите ♡ у предложения на странице результатов.</div>
+  <a class="btn-find text-decoration-none" href="{% url 'search:home' %}">Перейти к поиску</a>
+</div>
+{% endfor %}
+
+{% if user.is_authenticated %}<a href="{% url 'favorites:notifications' %}">Уведомления о снижении цены</a>{% endif %}
+{% endblock %}

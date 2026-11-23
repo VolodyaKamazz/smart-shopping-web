@@ -1,8 +1,14 @@
+from datetime import timedelta
+
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
+from django.utils import timezone
 
 from .terms import OfferTerms
 from .validators import validate_payment_methods
+
+
+DATA_STALE_AFTER = timedelta(hours=48)
 
 
 class Category(models.Model):
@@ -57,6 +63,11 @@ class Shop(models.Model):
 
     def __str__(self):
         return self.name
+
+    def has_stale_data(self, now=None) -> bool:
+        if self.last_import_at is None:
+            return False
+        return (now or timezone.now()) - self.last_import_at > DATA_STALE_AFTER
 
 
 class Offer(models.Model):

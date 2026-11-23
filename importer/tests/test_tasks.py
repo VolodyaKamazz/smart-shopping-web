@@ -6,10 +6,10 @@ from catalog.models import Offer, Shop
 from importer.models import ImportRun
 from importer.tasks import import_feeds
 
-from .helpers import make_client, make_shop, many_offers_feed
+from .helpers import NoRetryPause, make_client, make_shop, many_offers_feed
 
 
-class ImportFeedsTaskTests(TestCase):
+class ImportFeedsTaskTests(NoRetryPause, TestCase):
     def setUp(self):
         self.alpha, self.beta = make_shop("Альфа"), make_shop("Бета")
         self.routes = {self.alpha.feed_url: many_offers_feed(2), self.beta.feed_url: many_offers_feed(3)}

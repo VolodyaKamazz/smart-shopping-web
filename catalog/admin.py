@@ -71,7 +71,7 @@ class ShopAdmin(admin.ModelAdmin):
         ("Импорт", {"fields": ("feed_url", "refresh_hours", "category_map", "last_import_at")}),
     )
     list_display = ("name", "url", "rating", "rating_count", "return_days", "warranty_months", "origin_city",
-                    "refresh_hours", "last_import_at", "is_active", "offers_count")
+                    "refresh_hours", "last_import_at", "data_is_stale", "is_active", "offers_count")
     list_filter = ("is_active", "origin_city")
     search_fields = ("name", "url", "feed_url")
     list_select_related = ("origin_city",)
@@ -86,6 +86,10 @@ class ShopAdmin(admin.ModelAdmin):
     @admin.display(description="Предложений", ordering="_offers")
     def offers_count(self, obj):
         return obj._offers
+
+    @admin.display(description="Данные устарели", boolean=True)
+    def data_is_stale(self, obj):
+        return obj.has_stale_data()
 
     @admin.action(description="Включить выбранные магазины")
     def activate(self, request, queryset):

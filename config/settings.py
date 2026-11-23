@@ -111,7 +111,7 @@ Q_CLUSTER = {
     "orm": "default",
     "sync": _flag("DJANGO_Q_SYNC", default=DEBUG),
     "timeout": 120,
-    "retry": 180,
+    "retry": 360,
     "workers": 2,
     "catch_up": False,
 }

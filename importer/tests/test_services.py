@@ -9,7 +9,7 @@ from importer.models import ImportRun
 from importer.services import MAX_ERROR_SAMPLES
 from importer.tasks import import_feeds
 
-from .helpers import do_import, feed_xml, make_client, make_shop, many_offers_feed, offer_xml
+from .helpers import NoRetryPause, do_import, feed_xml, make_client, make_shop, many_offers_feed, offer_xml
 
 
 class ImportShopTests(TestCase):
@@ -81,7 +81,7 @@ class ImportShopTests(TestCase):
         self.assertEqual(str(Offer.objects.get().price), "100.00")
 
 
-class ImportFailureTests(TestCase):
+class ImportFailureTests(NoRetryPause, TestCase):
     def setUp(self):
         self.shop = make_shop()
 
@@ -151,8 +151,8 @@ class ImportFailureTests(TestCase):
     def test_expected_failures_are_logged_as_warning_without_traceback(self):
         with self.assertLogs("importer", "WARNING") as logs:
             do_import(self.shop, 500)
-        self.assertEqual([record.levelname for record in logs.records], ["WARNING"])
-        self.assertIsNone(logs.records[0].exc_info)
+        self.assertEqual({record.levelname for record in logs.records}, {"WARNING"})
+        self.assertIsNone(logs.records[-1].exc_info)
 
     def test_run_after_failure_succeeds(self):
         with self.assertLogs("importer", "WARNING"):
@@ -162,7 +162,7 @@ class ImportFailureTests(TestCase):
         self.assertEqual(ImportRun.objects.filter(shop=self.shop).count(), 2)
 
 
-class ImportFeedsTaskTests(TestCase):
+class ImportFeedsTaskTests(NoRetryPause, TestCase):
     def setUp(self):
         self.first = make_shop("Первый")
         self.second = make_shop("Второй")

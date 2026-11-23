@@ -23,6 +23,10 @@ class Command(BaseCommand):
         for run in ImportRun.objects.filter(pk__in=run_ids).select_related("shop").order_by("pk"):
             if run.status == "success":
                 self.stdout.write(self.style.SUCCESS(f"{run.shop.name}: успешно, {run.summary()}"))
+            elif run.status == "partial":
+                self.stdout.write(self.style.WARNING(f"{run.shop.name}: частично, {run.summary()}. {run.error}"))
+            elif run.status == "running":
+                self.stdout.write(self.style.WARNING(f"{run.shop.name}: импорт уже выполняется"))
             else:
                 failed.append(run.shop.name)
                 status = run.get_status_display().lower()

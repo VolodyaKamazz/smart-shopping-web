@@ -7,7 +7,8 @@ from django.utils import timezone
 
 from catalog.models import Shop
 
-from .downloader import download_feed
+from .downloader import DownloadError, download_feed
+from .lifecycle import deactivate_missing, previous_success_start, start_run
 from .models import ImportRun
 from .normalizer import InvalidOffer, normalize_offer
 from .offer_writer import write_offers
@@ -16,6 +17,7 @@ from .yml_parser import iter_offers
 logger = logging.getLogger(__name__)
 
 MAX_ERROR_SAMPLES = 20
+PARTIAL_ERROR_SHARE = 0.2
 
 
 class FeedError(Exception):
@@ -53,32 +55,60 @@ def _describe(exc: Exception) -> str:
     return f"{type(exc).__name__}: {text}" if text else type(exc).__name__
 
 
-def _import_feed(shop, run: ImportRun, client: httpx.Client) -> dict:
+def _import_feed(shop, run: ImportRun, client: httpx.Client, reactivate_before=None) -> dict:
     with download_feed(shop.feed_url, client) as feed:
         counters = _ParseCounters()
-        written = write_offers(shop, _valid_offers(shop, feed, counters), seen_at=run.started_at)
+        written = write_offers(shop, _valid_offers(shop, feed, counters), seen_at=run.started_at,
+                               reactivate_before=reactivate_before)
     if counters.seen == 0:
         raise FeedError("в фиде нет ни одного предложения")
-    return {"created": written.created, "updated": written.updated, "unchanged": written.unchanged,
-            "errors": counters.errors, "error_samples": counters.samples}
+    stats = {"created": written.created, "updated": written.updated, "unchanged": written.unchanged,
+             "errors": counters.errors, "error_samples": counters.samples}
+    if written.reactivated:
+        stats["reactivated"] = written.reactivated
+    return stats
+
+
+def _finish_successfully(shop: Shop, run: ImportRun, stats: dict, previous_start) -> None:
+    total = stats["created"] + stats["updated"] + stats["unchanged"] + stats["errors"]
+    run.status = "success"
+    if stats["errors"] > total * PARTIAL_ERROR_SHARE:
+        run.status = "partial"
+        run.error = f"Пропущено {stats['errors']} из {total} записей фида: больше {PARTIAL_ERROR_SHARE:.0%}"
+    elif previous_start is not None and (deactivated := deactivate_missing(shop, previous_start)):
+        stats["deactivated"] = deactivated
+    run.stats = stats
+    shop.last_import_at = timezone.now()
+    Shop.objects.filter(pk=shop.pk).update(last_import_at=shop.last_import_at)
+
+
+def _fail(run: ImportRun, error: str) -> ImportRun:
+    run.status = "failed"
+    run.error = error
+    run.finished_at = timezone.now()
+    run.save()
+    return run
 
 
 def import_shop(shop: Shop, client: httpx.Client) -> ImportRun:
-    run = ImportRun.objects.create(shop=shop)
+    run, started = start_run(shop)
+    if not started:
+        logger.warning("%s: импорт уже выполняется (запуск %s), новый не начат", shop.name, run.pk)
+        return run
+    previous_start = previous_success_start(shop, run)
     try:
-        run.stats = _import_feed(shop, run, client)
-    except (httpx.HTTPError, ParseError, FeedError) as exc:
+        stats = _import_feed(shop, run, client, previous_start)
+        _finish_successfully(shop, run, stats, previous_start)
+    except (httpx.HTTPError, ParseError, FeedError, DownloadError) as exc:
         logger.warning("%s: импорт не удался: %s", shop.name, _describe(exc))
-        run.status = "failed"
-        run.error = _describe(exc)
+        return _fail(run, _describe(exc))
     except Exception as exc:
         logger.exception("%s: импорт упал с неожиданной ошибкой", shop.name)
-        run.status = "failed"
-        run.error = _describe(exc)
-    else:
-        run.status = "success"
-        shop.last_import_at = timezone.now()
-        Shop.objects.filter(pk=shop.pk).update(last_import_at=shop.last_import_at)
+        return _fail(run, _describe(exc))
+    except (SystemExit, KeyboardInterrupt) as exc:
+        logger.warning("%s: импорт прерван: %s", shop.name, str(exc) or type(exc).__name__)
+        _fail(run, f"Импорт прерван: {str(exc) or type(exc).__name__}")
+        raise
     run.finished_at = timezone.now()
     run.save()
     return run

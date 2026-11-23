@@ -130,11 +130,11 @@ class WriteOffersTests(TestCase):
         real_write_chunk = offer_writer._write_chunk
         calls = []
 
-        def fail_on_third_chunk(shop, chunk, seen_at, stats):
+        def fail_on_third_chunk(shop, chunk, seen_at, stats, *rest):
             calls.append(chunk)
             if len(calls) == 3:
                 raise RuntimeError("сбой записи")
-            return real_write_chunk(shop, chunk, seen_at, stats)
+            return real_write_chunk(shop, chunk, seen_at, stats, *rest)
 
         with mock.patch("importer.offer_writer._write_chunk", fail_on_third_chunk), \
                 self.assertRaisesMessage(RuntimeError, "сбой записи"):
@@ -272,11 +272,11 @@ class WriteOffersMatchingTests(TestCase):
         real_write_chunk = offer_writer._write_chunk
         calls = []
 
-        def fail_on_third_chunk(shop, chunk, seen_at, stats):
+        def fail_on_third_chunk(shop, chunk, seen_at, stats, *rest):
             calls.append(chunk)
             if len(calls) == 3:
                 raise RuntimeError("сбой записи")
-            return real_write_chunk(shop, chunk, seen_at, stats)
+            return real_write_chunk(shop, chunk, seen_at, stats, *rest)
 
         with mock.patch("importer.offer_writer._write_chunk", fail_on_third_chunk), \
                 self.assertRaisesMessage(RuntimeError, "сбой записи"):

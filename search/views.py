@@ -10,7 +10,7 @@ from django.views.decorators.http import require_POST
 from catalog.models import Offer
 from delivery.models import City
 
-from . import ranking
+from . import degraded, ranking
 from .listing import current_sort, select_results
 from .models import OfferClick, SearchRequest
 
@@ -105,9 +105,10 @@ def _recommendation(search):
 
 def _warnings(search, items):
     facts = search.facts if isinstance(search.facts, dict) else {}
+    warnings = []
     if search.status == "done" and not items and not search.results.exists() and facts.get("excluded_over_budget"):
-        return [f"Все найденные предложения дороже вашего бюджета ({_money(facts['budget_max'])} ₽)"]
-    return []
+        warnings.append(f"Все найденные предложения дороже вашего бюджета ({_money(facts['budget_max'])} ₽)")
+    return warnings + degraded.warning_messages(facts)
 
 
 def _float(value):

@@ -1,6 +1,7 @@
 from django.db import models
 
-STAT_LABELS = {"created": "создано", "updated": "обновлено", "unchanged": "без изменений", "errors": "ошибок"}
+STAT_LABELS = {"created": "создано", "updated": "обновлено", "unchanged": "без изменений", "errors": "ошибок",
+               "deactivated": "деактивировано", "reactivated": "возвращено"}
 
 
 class ImportRun(models.Model):

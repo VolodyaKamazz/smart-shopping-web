@@ -7,10 +7,10 @@ from django.test import TestCase
 from catalog.models import Offer, Shop
 from importer.models import ImportRun
 
-from .helpers import feed_xml, make_client, make_shop, many_offers_feed, offer_xml
+from .helpers import NoRetryPause, feed_xml, make_client, make_shop, many_offers_feed, offer_xml
 
 
-class ImportFeedsCommandTests(TestCase):
+class ImportFeedsCommandTests(NoRetryPause, TestCase):
     def setUp(self):
         self.alpha = make_shop("Альфа")
         self.beta = make_shop("Beta")
@@ -69,9 +69,10 @@ class ImportFeedsCommandTests(TestCase):
         self.assertIn("Beta: успешно", out.getvalue())  # остальные магазины всё равно загружены
 
     def test_skipped_records_do_not_fail_the_command(self):
-        routes = {**self.routes, self.alpha.feed_url: feed_xml(offer_xml("ok"), offer_xml("bad", price=None))}
+        good = [offer_xml(str(i)) for i in range(5)]
+        routes = {**self.routes, self.alpha.feed_url: feed_xml(*good, offer_xml("bad", price=None))}
         output = self.run_command(routes=routes, warnings=True)
-        self.assertIn("Альфа: успешно, создано 1, обновлено 0, без изменений 0, ошибок 1", output)
+        self.assertIn("Альфа: успешно, создано 5, обновлено 0, без изменений 0, ошибок 1", output)
 
     def test_nothing_to_import(self):
         Shop.objects.update(is_active=False)

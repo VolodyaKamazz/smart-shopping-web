@@ -6,6 +6,7 @@ from catalog.models import Shop
 
 IMPORT_FUNC = "importer.tasks.import_feeds"
 NAME_PREFIX = "import_feeds:"
+IMPORT_TIMEOUT = 300
 MIN_MINUTES = 60
 MAX_MINUTES = 32767
 
@@ -16,8 +17,8 @@ def schedule_name(shop_id: int) -> str:
 
 def _wanted_fields(shop: Shop) -> dict:
     minutes = min(max(shop.refresh_hours * 60, MIN_MINUTES), MAX_MINUTES)
-    return {"func": IMPORT_FUNC, "args": str(shop.pk), "schedule_type": Schedule.MINUTES,
-            "minutes": minutes, "repeats": -1}
+    return {"func": IMPORT_FUNC, "args": str(shop.pk), "kwargs": repr({"q_options": {"timeout": IMPORT_TIMEOUT}}),
+            "schedule_type": Schedule.MINUTES, "minutes": minutes, "repeats": -1}
 
 
 def sync_shop_schedule(shop: Shop) -> str:

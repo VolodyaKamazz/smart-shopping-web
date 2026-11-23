@@ -1,5 +1,6 @@
 from collections.abc import Iterable, Iterator
 from dataclasses import dataclass
+from datetime import datetime
 from decimal import Decimal
 from itertools import islice
 from typing import NamedTuple
@@ -23,6 +24,8 @@ class KnownOffer(NamedTuple):
     price: Decimal
     in_stock: bool
     product_id: int | None
+    is_active: bool
+    last_seen_at: datetime | None
 
 
 @dataclass
@@ -30,6 +33,7 @@ class WriteStats:
     created: int = 0
     updated: int = 0
     unchanged: int = 0
+    reactivated: int = 0
 
 
 def _chunks(items: Iterable, size: int) -> Iterator[list]:
@@ -52,15 +56,16 @@ def _match_unlinked(chunk: list, known: dict) -> dict:
     return dict(zip((item.external_id for item in unlinked), match_offers(unlinked)))
 
 
-def _write_chunk(shop, chunk: list, seen_at, stats: WriteStats) -> None:
+def _write_chunk(shop, chunk: list, seen_at, stats: WriteStats, reactivate_before=None) -> None:
     known = {
-        external_id: KnownOffer(pk, content_hash, price, in_stock, product_id)
-        for external_id, pk, content_hash, price, in_stock, product_id in Offer.objects
+        external_id: KnownOffer(pk, content_hash, price, in_stock, product_id, is_active, last_seen_at)
+        for external_id, pk, content_hash, price, in_stock, product_id, is_active, last_seen_at in Offer.objects
         .filter(shop=shop, external_id__in=[item.external_id for item in chunk])
-        .values_list("external_id", "pk", "content_hash", "price", "in_stock", "product_id")
+        .values_list("external_id", "pk", "content_hash", "price", "in_stock", "product_id", "is_active",
+                     "last_seen_at")
     }
     product_ids = _match_unlinked(chunk, known)
-    created, changed, unchanged_ids, history, linked = [], [], [], [], []
+    created, changed, unchanged_ids, history, linked, reactivated_ids = [], [], [], [], [], []
 
     for item in chunk:
         content_hash = item.content_hash()
@@ -68,7 +73,9 @@ def _write_chunk(shop, chunk: list, seen_at, stats: WriteStats) -> None:
         if old is None:
             created.append(_new_offer(shop, item, content_hash, seen_at, product_ids.get(item.external_id)))
             continue
-        pk, old_hash, old_price, old_in_stock, old_product_id = old
+        pk, old_hash, old_price, old_in_stock, old_product_id, old_active, old_seen_at = old
+        if _returned_after_absence(old_active, old_seen_at, reactivate_before):
+            reactivated_ids.append(pk)
         if old_product_id is None and product_ids.get(item.external_id) is not None:
             linked.append(Offer(pk=pk, product_id=product_ids[item.external_id]))
         if old_hash == content_hash:
@@ -88,11 +95,19 @@ def _write_chunk(shop, chunk: list, seen_at, stats: WriteStats) -> None:
         Offer.objects.bulk_update(linked, ["product"])
     if unchanged_ids:
         Offer.objects.filter(pk__in=unchanged_ids).update(last_seen_at=seen_at)
+    if reactivated_ids:
+        Offer.objects.filter(pk__in=reactivated_ids).update(is_active=True)
     PriceHistory.objects.bulk_create(history)
 
     stats.created += len(created)
     stats.updated += len(changed)
     stats.unchanged += len(unchanged_ids)
+    stats.reactivated += len(reactivated_ids)
+
+
+def _returned_after_absence(is_active: bool, last_seen_at, reactivate_before) -> bool:
+    return (not is_active and reactivate_before is not None and last_seen_at is not None
+            and last_seen_at < reactivate_before)
 
 
 def _fill_missing_pks(shop, offers: list) -> None:
@@ -104,9 +119,10 @@ def _fill_missing_pks(shop, offers: list) -> None:
             offer.pk = ids[offer.external_id]
 
 
-def write_offers(shop, offers: Iterable[NormalizedOffer], seen_at, chunk_size: int = CHUNK_SIZE) -> WriteStats:
+def write_offers(shop, offers: Iterable[NormalizedOffer], seen_at, chunk_size: int = CHUNK_SIZE,
+                 reactivate_before=None) -> WriteStats:
     stats = WriteStats()
     with transaction.atomic():
         for chunk in _chunks(offers, chunk_size):
-            _write_chunk(shop, chunk, seen_at, stats)
+            _write_chunk(shop, chunk, seen_at, stats, reactivate_before)
     return stats

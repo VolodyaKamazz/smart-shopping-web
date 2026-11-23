@@ -1,4 +1,5 @@
 from itertools import count
+from unittest import mock
 
 import httpx
 from django.conf import settings
@@ -10,6 +11,15 @@ from importer.services import import_shop
 from importer.yml_parser import RawOffer
 
 FEEDS_DIR = settings.DEMO_FEEDS_DIR
+
+
+class NoRetryPause:
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        patcher = mock.patch("importer.downloader.time.sleep")
+        patcher.start()
+        cls.addClassCleanup(patcher.stop)
 
 
 def demo_feed(name: str) -> bytes:

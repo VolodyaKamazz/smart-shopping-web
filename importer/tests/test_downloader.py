@@ -3,12 +3,13 @@ from django.test import SimpleTestCase
 
 from importer.downloader import download_feed, make_client
 
+from .helpers import NoRetryPause
 from .helpers import make_client as fake_client
 
 URL = "http://shop.example/feed.yml"
 
 
-class DownloadFeedTests(SimpleTestCase):
+class DownloadFeedTests(NoRetryPause, SimpleTestCase):
     def test_gives_file_with_body_at_start(self):
         body = b"x" * 200_000
         with download_feed(URL, fake_client({URL: body})) as feed:

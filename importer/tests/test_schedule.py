@@ -1,3 +1,4 @@
+import ast
 import io
 from datetime import timedelta
 from unittest import mock
@@ -10,7 +11,7 @@ from django_q.scheduler import scheduler
 
 from catalog.models import Offer, Shop
 from importer.models import ImportRun
-from importer.schedule import MAX_MINUTES, schedule_name
+from importer.schedule import IMPORT_TIMEOUT, MAX_MINUTES, schedule_name, sync_shop_schedule
 
 from .helpers import make_client, make_shop, many_offers_feed
 
@@ -28,6 +29,17 @@ class ShopScheduleTests(TestCase):
         self.assertEqual(schedule.schedule_type, Schedule.MINUTES)
         self.assertEqual(schedule.minutes, 240)
         self.assertEqual(schedule.repeats, -1)
+
+    def test_schedule_carries_its_own_task_timeout_in_a_format_django_q_parses(self):
+        schedule = Schedule.objects.get(name=schedule_name(create_shop().pk))
+        self.assertEqual(ast.literal_eval(schedule.kwargs), {"q_options": {"timeout": IMPORT_TIMEOUT}})
+
+    def test_existing_schedule_without_timeout_is_updated(self):
+        shop = create_shop()
+        Schedule.objects.filter(name=schedule_name(shop.pk)).update(kwargs=None)
+        self.assertEqual(sync_shop_schedule(shop), "updated")
+        self.assertEqual(Schedule.objects.get(name=schedule_name(shop.pk)).kwargs,
+                         repr({"q_options": {"timeout": IMPORT_TIMEOUT}}))
 
     def test_default_period_is_six_hours(self):
         shop = create_shop()

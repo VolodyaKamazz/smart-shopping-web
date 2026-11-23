@@ -88,3 +88,12 @@ class EnvHelpersTests(SimpleTestCase):
 
     def test_missing_dotenv_is_fine(self):
         _load_dotenv(Path("/нет/такого/.env"))
+
+
+class QueueTimeoutTests(SimpleTestCase):
+    def test_retry_outlasts_import_timeout_which_outlasts_default_timeout(self):
+        from importer.schedule import IMPORT_TIMEOUT
+        cluster = settings.Q_CLUSTER
+        self.assertGreater(cluster["retry"], IMPORT_TIMEOUT)
+        self.assertGreater(IMPORT_TIMEOUT, cluster["timeout"])
+

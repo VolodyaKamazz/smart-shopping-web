@@ -15,15 +15,36 @@
             <a class="brand" href="{% url 'search:home' %}">Умный Шопинг</a>
             <nav class="d-flex align-items-center gap-4">
                 {% if user.is_authenticated %}
-                {% if user.city %}<span class="hdr-item">📍 {{ user.city.name }}</span>{% endif %}
-                <a class="hdr-item" href="{% url 'favorites:list' %}"><span class="text-danger">♡</span> {% if favorites_count %}({{ favorites_count }}){% else %}Избранное{% endif %}</a>
+                <form method="post" action="{% url 'search:set_city' %}" class="city-form m-0">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <label class="hdr-item d-flex align-items-center gap-1 m-0">📍
+                        <select name="city" class="city-select" onchange="this.form.submit()" aria-label="Город доставки">
+                            <option value="">Выберите город</option>
+                            {% for c in cities %}<option value="{{ c.id }}"{% if c.id == current_city.id %} selected{% endif %}>{{ c.name }}</option>{% endfor %}
+                        </select>
+                    </label>
+                    <noscript><button class="btn btn-sm btn-outline-secondary" type="submit">ОК</button></noscript>
+                </form>
+                <a class="hdr-item" href="{% url 'favorites:list' %}"><span class="text-danger">♡</span> <span data-fav-count>{% if favorites_count %}({{ favorites_count }}){% else %}Избранное{% endif %}</span></a>
                 <a class="hdr-item" href="{% url 'accounts:cabinet' %}">👤 Кабинет</a>
                 <form method="post" action="{% url 'accounts:logout' %}" class="m-0">
                     {% csrf_token %}
                     <button class="btn btn-sm btn-outline-secondary" type="submit">Выйти</button>
                 </form>
                 {% else %}
-                <a class="hdr-item" href="{% url 'favorites:list' %}"><span class="text-danger">♡</span> {% if favorites_count %}({{ favorites_count }}){% else %}Избранное{% endif %}</a>
+                <form method="post" action="{% url 'search:set_city' %}" class="city-form m-0">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <label class="hdr-item d-flex align-items-center gap-1 m-0">📍
+                        <select name="city" class="city-select" onchange="this.form.submit()" aria-label="Город доставки">
+                            <option value="">Выберите город</option>
+                            {% for c in cities %}<option value="{{ c.id }}"{% if c.id == current_city.id %} selected{% endif %}>{{ c.name }}</option>{% endfor %}
+                        </select>
+                    </label>
+                    <noscript><button class="btn btn-sm btn-outline-secondary" type="submit">ОК</button></noscript>
+                </form>
+                <a class="hdr-item" href="{% url 'favorites:list' %}"><span class="text-danger">♡</span> <span data-fav-count>{% if favorites_count %}({{ favorites_count }}){% else %}Избранное{% endif %}</span></a>
                 <a class="hdr-item" href="{% url 'accounts:register' %}">Регистрация</a>
                 <a class="hdr-item" href="{% url 'accounts:login' %}">👤 Войти</a>
                 {% endif %}

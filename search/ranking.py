@@ -69,8 +69,10 @@ def apply_recommendation(search, ranked, offers_by_id, priority, base_facts=None
     search.save(update_fields=["recommended_offer", "explanation", "facts"])
 
 
-def rank_and_save(search, offers):
+def rank_and_save(search, offers, priority=None, carry_excluded=0):
     profile = profile_for(search)
+    if priority in PRIORITIES:
+        profile["priority"] = priority
     infos = delivery_map(offers, search.city, profile["priority"])
     offers_by_id = {offer.id: offer for offer in offers}
     ranked = recommender.rank([offer_input(o, infos[o.id]) for o in offers], profile)[:MAX_RESULTS]
@@ -88,7 +90,7 @@ def rank_and_save(search, offers):
     budget = profile["budget_max"]
     base_facts = {
         "budget_max": None if budget is None else float(budget),
-        "excluded_over_budget": len(offers) - len(ranked) if budget is not None else 0,
+        "excluded_over_budget": carry_excluded + len(offers) - len(ranked) if budget is not None else 0,
     }
     apply_recommendation(search, ranked, offers_by_id, profile["priority"], base_facts)
     return len(ranked)
@@ -111,3 +113,11 @@ def recalculate(search, priority):
         results, ["rank", "score", "breakdown", "is_recommended", "total_price", *DELIVERY_FIELDS])
     base_facts = {key: search.facts.get(key) for key in ("budget_max", "excluded_over_budget") if key in search.facts}
     apply_recommendation(search, ranked, {r.offer_id: r.offer for r in results}, priority, base_facts)
+
+
+def change_city(search, city):
+    offers = [r.offer for r in search.results.select_related("offer__shop", "offer__product")]
+    facts = search.facts if isinstance(search.facts, dict) else {}
+    search.city = city
+    search.save(update_fields=["city"])
+    rank_and_save(search, offers, priority=facts.get("criterion"), carry_excluded=facts.get("excluded_over_budget") or 0)

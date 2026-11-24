@@ -70,3 +70,7 @@ body { background: var(--bg); font-family: Inter, system-ui, "Segoe UI", Roboto,
 .best-tag { color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
 .cmp-img { background: #dfe9f7; border-radius: 0.8rem; height: 5rem; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 0.8rem; }
 .cmp hr { margin: 0.6rem 0; }
+
+.thumb, .cmp-img { overflow: hidden; }
+.thumb img, .cmp-img img { width: 100%; height: 100%; object-fit: cover; }
+.city-select { border: 0; background-color: transparent; font: inherit; font-weight: 500; color: inherit; max-width: 11rem; cursor: pointer; }

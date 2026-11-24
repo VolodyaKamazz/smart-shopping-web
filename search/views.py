@@ -5,13 +5,15 @@ from django.db.models import F
 from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.utils.http import url_has_allowed_host_and_scheme
 from django.views.decorators.http import require_POST
 
 from catalog.models import Offer
-from delivery.models import City
 from favorites.owners import favorite_product_ids
 
 from . import ranking
+from .city import city_from, current_city, remember_city
+from .images import image_of
 from .listing import current_sort, select_results, shops_of
 from .models import OfferClick, SearchRequest
 
@@ -29,11 +31,37 @@ def start_search(request):
     if not request.session.session_key:
         request.session.create()
     user = request.user if request.user.is_authenticated else None
-    city = City.objects.filter(pk=request.POST.get("city") or None).first() or (user.city if user else None)
+    city = city_from(request.POST.get("city")) or current_city(request)
     search = SearchRequest.objects.create(user=user, session_key=request.session.session_key, raw_query=query, city=city)
     from django_q.tasks import async_task  # в режиме sync выполняется сразу
     async_task("search.tasks.run_search", str(search.id))
     return redirect("search:wait", search_id=search.id)
+
+
+def _wants_json(request):
+    return request.headers.get("X-Requested-With") == "XMLHttpRequest" or "application/json" in request.headers.get("Accept", "")
+
+
+def _safe_next(request):
+    target = request.POST.get("next") or ""
+    if target and url_has_allowed_host_and_scheme(target, allowed_hosts={request.get_host()}):
+        return target
+    return reverse("search:home")
+
+
+@require_POST
+def set_city(request):
+    raw = (request.POST.get("city") or "").strip()
+    city = city_from(raw)
+    if raw and city is None:
+        if _wants_json(request):
+            return JsonResponse({"error": "unknown_city"}, status=400)
+        messages.error(request, "Такого города нет в списке")
+        return redirect(_safe_next(request))
+    remember_city(request, city)
+    if _wants_json(request):
+        return JsonResponse({"city": None if city is None else {"id": city.id, "name": city.name}})
+    return redirect(_safe_next(request))
 
 
 def _own_search(request, search_id):
@@ -82,12 +110,19 @@ def _result_item(result, favorites=frozenset()):
         "rating": offer.shop.rating,
         "is_recommended": result.is_recommended,
         "is_favorite": offer.product_id in favorites,
+        "image_url": image_of(offer.product),
     }
 
 
 def _current_criterion(search):
     value = search.facts.get("criterion") if isinstance(search.facts, dict) else None
     return value if value in ranking.PRIORITIES else "balanced"
+
+
+def _sync_city(request, search):
+    city = current_city(request)
+    if city is not None and search.status == "done" and search.city_id != city.id:
+        ranking.change_city(search, city)
 
 
 def _sync_criterion(request, search):
@@ -123,6 +158,7 @@ def _api_item(result, favorites=frozenset()):
         "product_id": offer.product_id,
         "is_favorite": offer.product_id in favorites,
         "shop_id": offer.shop_id,
+        "image_url": image_of(offer.product),
         "shop": offer.shop.name,
         "title": offer.title_raw,
         "price": _float(result.item_price),
@@ -144,6 +180,7 @@ def _api_item(result, favorites=frozenset()):
 def results(request, search_id):
     """Дашборд. GET: criterion (balanced|price|speed), sort (price|delivery|rating|total), price_min, price_max, shop, delivery_max_days."""
     search = _own_search(request, search_id)
+    _sync_city(request, search)
     _sync_criterion(request, search)
     favorites = favorite_product_ids(request)
     items = [_result_item(r, favorites) for r in select_results(search, request.GET)]
@@ -160,6 +197,7 @@ def results(request, search_id):
 
 def results_api(request, search_id):
     search = _own_search(request, search_id)
+    _sync_city(request, search)
     _sync_criterion(request, search)
     selected = select_results(search, request.GET)
     favorites = favorite_product_ids(request)
@@ -169,6 +207,7 @@ def results_api(request, search_id):
         "sort": current_sort(request.GET) or "recommendation",
         "recommendation": _recommendation(search),
         "count": len(selected),
+        "city": None if search.city is None else {"id": search.city.id, "name": search.city.name},
         "shops": shops_of(search),
         "items": [_api_item(r, favorites) for r in selected],
     }, json_dumps_params={"ensure_ascii": False})

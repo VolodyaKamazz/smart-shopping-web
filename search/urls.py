@@ -9,6 +9,7 @@ urlpatterns = [
     path("search/<uuid:search_id>/wait/", views.wait, name="wait"),
     path("search/<uuid:search_id>/status/", views.status, name="status"),
     path("results/<uuid:search_id>/", views.results, name="results"),
+    path("city/", views.set_city, name="set_city"),
     path("results/<uuid:search_id>/api/", views.results_api, name="results_api"),
     path("results/<uuid:search_id>/feedback/", views.feedback, name="feedback"),
     path("go/<int:offer_id>/", views.go, name="go"),

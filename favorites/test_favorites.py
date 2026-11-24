@@ -75,9 +75,11 @@ class AnonymousToggleTests(FavBase):
 
     def test_json_response(self):
         data = self.add_json().json()
-        self.assertEqual(data, {"is_favorite": True, "product_id": self.product.id, "price_at_add": 29500.0})
+        self.assertEqual(data, {"is_favorite": True, "product_id": self.product.id, "price_at_add": 29500.0,
+                                "favorites_count": 1})
         data = self.add_json().json()
-        self.assertEqual(data, {"is_favorite": False, "product_id": self.product.id, "price_at_add": None})
+        self.assertEqual(data, {"is_favorite": False, "product_id": self.product.id, "price_at_add": None,
+                                "favorites_count": 0})
 
     def test_json_by_accept_header(self):
         response = self.client.post(self.toggle_url, HTTP_ACCEPT="application/json")
@@ -185,10 +187,14 @@ class ListPageTests(FavBase):
         response = self.client.get(self.list_url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context["rows"], [])
-        self.assertContains(response, "Пока пусто")
+        self.assertContains(response, "В избранном пока ничего нет")
 
     def test_anonymous_hint(self):
+        self.add()
         self.assertContains(self.client.get(self.list_url), "хранится в вашей сессии")
+
+    def test_no_hint_on_empty_page(self):
+        self.assertNotContains(self.client.get(self.list_url), "хранится в вашей сессии")
 
     def test_row_contains_fixed_and_current_price(self):
         self.add()

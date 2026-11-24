@@ -32,7 +32,7 @@ def _shop_filter(params):
     for value in values:
         for part in str(value or "").split(","):
             part = part.strip()
-            if part.isdigit():
+            if part.isascii() and part.isdigit():
                 ids.add(int(part))
             elif part:
                 names.add(part.lower())
@@ -50,7 +50,7 @@ def current_sort(params):
 
 
 def select_results(search, params):
-    results = list(search.results.select_related("offer__shop"))
+    results = list(search.results.select_related("offer__shop", "offer__product"))
     price_min = _non_negative_price(params.get("price_min"))
     price_max = _non_negative_price(params.get("price_max"))
     max_days = _non_negative_int(params.get("delivery_max_days"))

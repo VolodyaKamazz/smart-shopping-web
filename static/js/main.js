@@ -29,6 +29,10 @@
       '<div class="col-md-4"><b>Гарантия:</b> ' + val(i.warranty_months, (v) => esc(v) + ' мес.') + '</div></div>';
   }
 
+  function picture(url) {
+    return url ? '<img src="' + esc(url) + '" alt="" loading="lazy" onerror="this.parentNode.textContent=\'🖼\'">' : '🖼';
+  }
+
   function isFav(i) { return favState.has(i.product_id) ? favState.get(i.product_id) : !!i.is_favorite; }
 
   function heart(i) {
@@ -43,7 +47,7 @@
     return '<div class="offer' + (i.is_recommended ? ' recommended' : '') + '">' +
       '<div class="sel">' + heart(i) +
       '<input type="checkbox" class="form-check-input pick" data-id="' + i.offer_id + '"' + (picked.has(i.offer_id) ? ' checked' : '') + '></div>' +
-      '<div class="main"><div class="thumb">🖼</div><div>' +
+      '<div class="main"><div class="thumb">' + picture(i.image_url) + '</div><div>' +
       '<div class="title">' + esc(i.title) + '</div>' +
       '<div class="shop">' + esc(i.shop) + rating + '</div>' +
       '<div class="links"><button type="button" class="link" data-toggle="' + i.offer_id + '">Подробнее ▾</button>' +
@@ -60,7 +64,7 @@
     const rating = i.rating == null ? '' : '★ ' + Number(i.rating).toFixed(1).replace('.', ',');
     return '<div class="col-md-4"><div class="cmp' + (best ? ' best' : '') + '">' +
       (best ? '<div class="best-tag">★ Лучший вариант</div>' : '') +
-      '<div class="cmp-img">🖼</div>' +
+      '<div class="cmp-img">' + picture(i.image_url) + '</div>' +
       '<div class="d-flex justify-content-between align-items-start mb-1"><span>' + esc(i.title) + '</span>' + heart(i) + '</div>' +
       '<div class="d-flex justify-content-between mb-2"><span>' + esc(i.shop) + '</span><span>' + rating + '</span></div><hr>' +
       kv('Цена', money(i.price)) + kv('Доставка', money(i.delivery_price)) + kv('Срок', term(i)) + '<hr>' +
@@ -167,6 +171,8 @@
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const data = await resp.json();
         favState.set(pid, data.is_favorite);
+        const badge = document.querySelector('[data-fav-count]');
+        if (badge && data.favorites_count != null) badge.textContent = data.favorites_count ? '(' + data.favorites_count + ')' : 'Избранное';
         document.querySelectorAll('.heart[data-product="' + pid + '"]').forEach((el) => {
           el.textContent = data.is_favorite ? '♥' : '♡';
           el.title = data.is_favorite ? 'Убрать из избранного' : 'В избранное';

@@ -10,7 +10,7 @@
 
 {% for row in rows %}
 <div class="fav-card">
-  <div class="thumb">🖼</div>
+  <div class="thumb">{% if row.image_url %}<img src="{{ row.image_url }}" alt="" loading="lazy" onerror="this.parentNode.textContent='🖼'">{% else %}🖼{% endif %}</div>
   <div>
     <div class="fav-name">{{ row.product.name }}</div>
     <div class="fav-meta">
@@ -19,6 +19,8 @@
         {% if row.trend == "down" %}<b class="text-success">↓ {{ row.diff }}</b>
         {% elif row.trend == "up" %}<b class="text-danger">↑ {{ row.diff }}</b>{% endif %}</span>
       {% if row.shop %}<span>магазин: {{ row.shop }}</span>{% endif %}
+      {% if row.delivery %}<span>Доставка: {{ row.delivery }}</span>{% endif %}
+      {% if row.total %}<span>Итого с доставкой: {{ row.total }}</span>{% endif %}
     </div>
   </div>
   <form method="post" action="{% url 'favorites:toggle' row.product.id %}" class="ms-auto m-0">
